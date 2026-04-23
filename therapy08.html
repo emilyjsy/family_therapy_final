@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정신분석적 가족치료 — 기말고사 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #181c27;
+    --card: #1e2336;
+    --border: #2a3050;
+    --teal: #2dd4bf;
+    --teal-dim: rgba(45,212,191,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --rose: #fb7185;
+    --rose-dim: rgba(251,113,133,0.12);
+    --violet: #a78bfa;
+    --violet-dim: rgba(167,139,250,0.12);
+    --sky: #38bdf8;
+    --sky-dim: rgba(56,189,248,0.12);
+    --green: #4ade80;
+    --green-dim: rgba(74,222,128,0.12);
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 0 80px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0f1117 0%, #1a1f35 50%, #0f1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(45,212,191,0.08) 0%, transparent 70%);
+  }
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .tag {
+    background: var(--teal-dim);
+    border: 1px solid rgba(45,212,191,0.3);
+    color: var(--teal);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  /* ── NAV ── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,17,23,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 16px;
+    overflow-x: auto;
+  }
+  .nav {
+    display: flex;
+    gap: 0;
+    white-space: nowrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .nav a {
+    display: block;
+    padding: 14px 16px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover { color: var(--teal); border-color: var(--teal); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 48px 0 0; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .section-title span { font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 8px; font-family: var(--sans); }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── COMPARE TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .compare-table th {
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .compare-table th:first-child { color: var(--muted); }
+  .compare-table th:nth-child(2) { color: var(--sky); background: var(--sky-dim); border-radius: 8px 0 0 0; }
+  .compare-table th:nth-child(3) { color: var(--teal); background: var(--teal-dim); border-radius: 0 8px 0 0; }
+  .compare-table td {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .compare-table td:first-child { color: var(--amber); font-weight: 600; font-size: 13px; }
+  .compare-table td:nth-child(2) { color: #cbd5e1; }
+  .compare-table td:nth-child(3) { color: #cbd5e1; }
+
+  /* ── CONCEPT GRID ── */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) { .concept-grid { grid-template-columns: 1fr; } }
+
+  .concept-card {
+    border-radius: 10px;
+    padding: 18px 20px;
+    border: 1px solid;
+  }
+  .concept-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .concept-card p, .concept-card li {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #b0bdd0;
+  }
+  .concept-card ul { padding-left: 16px; }
+
+  /* color variants */
+  .c-teal { border-color: rgba(45,212,191,0.3); background: var(--teal-dim); }
+  .c-teal h3 { color: var(--teal); }
+  .c-amber { border-color: rgba(251,191,36,0.3); background: var(--amber-dim); }
+  .c-amber h3 { color: var(--amber); }
+  .c-rose { border-color: rgba(251,113,133,0.3); background: var(--rose-dim); }
+  .c-rose h3 { color: var(--rose); }
+  .c-violet { border-color: rgba(167,139,250,0.3); background: var(--violet-dim); }
+  .c-violet h3 { color: var(--violet); }
+  .c-sky { border-color: rgba(56,189,248,0.3); background: var(--sky-dim); }
+  .c-sky h3 { color: var(--sky); }
+  .c-green { border-color: rgba(74,222,128,0.3); background: var(--green-dim); }
+  .c-green h3 { color: var(--green); }
+
+  /* ── KEY-POINT ── */
+  .key-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 3px solid;
+  }
+  .kp-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .kp-body { font-size: 14px; line-height: 1.75; color: #c8d4e6; }
+  .kp-body strong { font-weight: 700; }
+  .kp-teal { background: var(--teal-dim); border-color: var(--teal); }
+  .kp-amber { background: var(--amber-dim); border-color: var(--amber); }
+  .kp-rose { background: var(--rose-dim); border-color: var(--rose); }
+  .kp-violet { background: var(--violet-dim); border-color: var(--violet); }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+  }
+  .flow-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--text);
+  }
+  .flow-arrow { color: var(--muted); font-size: 16px; }
+
+  /* ── ACCORDION ── */
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  summary {
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '＋';
+    font-size: 16px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { content: '－'; }
+  .details-body {
+    padding: 0 20px 18px;
+    font-size: 13.5px;
+    color: #b0bdd0;
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body strong { color: var(--text); font-weight: 600; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .warn-box {
+    background: rgba(251,191,36,0.08);
+    border: 1px solid rgba(251,191,36,0.35);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    color: #e2c97a;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .warn-box strong { color: var(--amber); }
+
+  /* ── PERSONS TABLE ── */
+  .person-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .person-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .person-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .person-contrib {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.65;
+  }
+  .person-contrib em {
+    font-style: normal;
+    color: var(--amber);
+    font-weight: 600;
+  }
+
+  /* ── QUIZ BOX ── */
+  .quiz-wrap { margin-top: 8px; }
+  .quiz-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+  }
+  .quiz-q { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+  .quiz-a {
+    background: var(--teal-dim);
+    border: 1px solid rgba(45,212,191,0.25);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: #9ae6d8;
+    display: none;
+  }
+  .quiz-item.open .quiz-a { display: block; }
+  .btn-reveal {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: all 0.2s;
+    font-family: var(--sans);
+  }
+  .btn-reveal:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 40px 0 0; }
+
+  /* ── SUMMARY BOX ── */
+  .summary-box {
+    background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(167,139,250,0.08));
+    border: 1px solid rgba(45,212,191,0.25);
+    border-radius: 14px;
+    padding: 28px 28px;
+    margin-top: 8px;
+  }
+  .summary-box h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+  .summary-box ol { padding-left: 20px; }
+  .summary-box li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #c8d5e8;
+    line-height: 1.75;
+  }
+  .summary-box li strong { color: var(--amber); }
+
+  /* badge */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-red { background: var(--rose-dim); color: var(--rose); border: 1px solid rgba(251,113,133,0.3); }
+  .badge-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(251,191,36,0.3); }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="hero-label">Psychoanalytic Family Therapy · 8장</div>
+  <h1>정신<span>역동적</span> 가족치료<br>기말고사 완전정복</h1>
+  <p class="hero-sub">모든 개념을 혼동 없이 정확하게 · 객관식 함정 포인트 완벽 포함</p>
+  <div class="tags">
+    <span class="tag">대상관계이론</span>
+    <span class="tag">투사적 동일시</span>
+    <span class="tag">분열(splitting)</span>
+    <span class="tag">전이·역전이</span>
+    <span class="tag">분리-개별화</span>
+    <span class="tag">거짓자기</span>
+    <span class="tag">체계 vs 정신분석</span>
+  </div>
+</div>
+
+<!-- ─── NAV ─── -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#s1">①역사</a>
+    <a href="#s2">②비교</a>
+    <a href="#s3">③인물</a>
+    <a href="#s4">④핵심개념</a>
+    <a href="#s5">⑤방어기제</a>
+    <a href="#s6">⑥투사적동일시</a>
+    <a href="#s7">⑦전이</a>
+    <a href="#s8">⑧정상발달</a>
+    <a href="#s9">⑨치료</a>
+    <a href="#s10">⑩퀴즈</a>
+  </nav>
+</div>
+
+
+<div class="container">
+
+<!-- ─── S1: 역사 ─── -->
+<section id="s1">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(45,212,191,0.15);">📜</div>
+    <div class="section-title">정신역동의 재발견 <span>역사적 흐름</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>시대별 흐름 — 순서가 시험에 자주 나옴</div>
+    <div class="flow">
+      <div class="flow-box">초기 가족치료자<br><small style="color:var(--muted)">정신분석 훈련 받음</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box" style="border-color:var(--sky);color:var(--sky)">체계 접근으로 전환<br><small>1950~70년대</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box" style="border-color:var(--teal);color:var(--teal)">정신역동 재주목<br><small>1980년대 이후</small></div>
+    </div>
+  </div>
+
+  <div class="key-point kp-teal">
+    <span class="kp-icon">💡</span>
+    <div class="kp-body">
+      <strong>왜 정신역동이 다시 주목받았나?</strong><br>
+      1980년대 이후 가족문제를 설명할 때 <strong>무의식과 초기관계 경험</strong>이 다시 중요하게 부각됨.<br>
+      특히 <strong>대상관계이론</strong>과 <strong>자기심리학</strong>이 가족 내 정서적 상처·반복 패턴 이해에 유용하다고 여겨짐.
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠️ 함정 포인트:</strong> "초기 가족치료자들은 처음부터 체계 접근을 사용했다" → <strong>틀림</strong>.<br>
+    초기 가족치료자들은 <u>정신분석 훈련을 받았지만</u>, 가족치료를 시작하면서 정신분석 모델을 거부하고 체계 접근으로 전환함.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S2: 비교 ─── -->
+<section id="s2">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(56,189,248,0.15);">⚖️</div>
+    <div class="section-title">두 접근 완벽 비교 <span>객관식 단골</span></div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>🔷 체계적 가족치료</th>
+          <th>🔶 정신분석적 가족치료</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>기본 관점</td><td>개인 문제를 <strong>가족 전체의 상호작용 패턴</strong> 속에서 이해</td><td>개인의 <strong>무의식, 초기경험, 내면 갈등</strong>에 초점</td></tr>
+        <tr><td>문제의 원인</td><td>가족 내 상호작용, 의사소통 패턴, 관계 구조</td><td>무의식적 갈등, 어린 시절 경험, <strong>내적 대상</strong></td></tr>
+        <tr><td>치료 초점</td><td><strong>현재</strong>의 관계 패턴·상호작용 변화</td><td><strong>과거 경험</strong>과 무의식적 과정의 통찰</td></tr>
+        <tr><td>변화의 단위</td><td><strong>가족 전체 (체계)</strong></td><td><strong>개인</strong> (가족 맥락 고려 가능)</td></tr>
+        <tr><td>시간 지향성</td><td><strong>현재 중심</strong> (here-and-now)</td><td><strong>과거 중심</strong> (어린 시절)</td></tr>
+        <tr><td>치료자 역할</td><td>중재자, 관찰자, 상호작용 재구성 촉진자</td><td><strong>해석자</strong>, 통찰을 돕는 전문가</td></tr>
+        <tr><td>주요 기법</td><td>순환적 질문, 재구성, 역할 변화, 의사소통 개입</td><td><strong>자유연상, 해석, 전이/역전이 분석</strong></td></tr>
+        <tr><td>관계 이해</td><td>상호작용적, <strong>순환적 인과관계</strong></td><td>내면화된 관계(대상관계), <strong>일방향적 인과 강조</strong></td></tr>
+        <tr><td>목표</td><td>관계 패턴 변화, 기능적 가족 상호작용 증진</td><td><strong>자기이해 증진, 무의식 갈등 해소</strong></td></tr>
+        <tr><td>대표 이론</td><td>보웬, 구조적/전략적/경험적 가족치료</td><td><strong>대상관계이론, 자기심리학</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠️ 핵심 구별 포인트:</strong><br>
+    • 체계 접근 = <strong>현재·상호작용·순환·가족 전체</strong><br>
+    • 정신분석 접근 = <strong>과거·무의식·개인·내면화된 관계</strong><br>
+    실제 임상에서는 두 관점을 <strong>통합적으로</strong> 사용하는 경우가 많음 → "두 접근은 항상 배타적이다" = <strong>틀림</strong>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S3: 주요 인물 ─── -->
+<section id="s3">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,0.15);">👥</div>
+    <div class="section-title">주요 인물과 이론 <span>인물-개념 매칭 필수</span></div>
+  </div>
+
+  <div class="person-grid">
+    <div class="person-card">
+      <div class="person-name">Sigmund Freud</div>
+      <div class="person-contrib">
+        <em>개인 내면(intrapsychic) 과정</em> 중심<br>
+        의도적으로 <em>가족을 치료에서 제외</em><br>
+        성심리 발달, 리비도, 공격적 욕구 강조
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Melanie Klein</div>
+      <div class="person-contrib">
+        <em>투사적 동일시</em> 개념 창시<br>
+        <em>분열(splitting)</em> — 초기 불안과 방어 설명<br>
+        초기 불안과 방어 기제에 집중
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Ronald Fairbairn</div>
+      <div class="person-contrib">
+        <em>대상관계이론</em> 발전<br>
+        "인간은 욕동보다 <em>관계를 추구</em>한다"<br>
+        1940~50년대 핵심 기여자
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Donald Winnicott</div>
+      <div class="person-contrib">
+        <em>참자기 vs 거짓자기</em><br>
+        <em>"충분히 좋은 어머니"</em> (good-enough mothering)<br>
+        인간 대인관계의 본질 강조
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">H. Stack Sullivan &amp;<br>Edith Jacobson</div>
+      <div class="person-contrib">
+        <em>1950년대</em><br>
+        정신의학에서 <em>대인관계의 중요성</em> 강조
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Henry Dicks</div>
+      <div class="person-contrib">
+        <em>1960년대</em><br>
+        대상관계이론을 <em>부부 갈등 치료</em>에 처음 적용<br>
+        "부부문제 = 현재 사건 + 오래된 감정 시나리오의 재연"
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Margaret Mahler</div>
+      <div class="person-contrib">
+        <em>분리-개별화 과정</em> 이론<br>
+        아동 발달에서 자아 형성의 핵심 단계를 체계화
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-top:16px;">
+    <strong>⚠️ 인물-개념 매칭 오답 주의:</strong><br>
+    • <strong>투사적 동일시</strong> → Klein (Freud ✗)<br>
+    • <strong>참자기/거짓자기, 충분히 좋은 어머니</strong> → Winnicott (Klein ✗)<br>
+    • <strong>부부갈등에 대상관계 최초 적용</strong> → Dicks<br>
+    • <strong>대상관계이론 + 관계 추구 강조</strong> → Fairbairn
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S4: 핵심 개념 ─── -->
+<section id="s4">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(167,139,250,0.15);">🧠</div>
+    <div class="section-title">대상관계이론 핵심 개념 <span>단답형 단골</span></div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card c-teal">
+      <h3>🎯 대상(Objects)이란?</h3>
+      <p>경험과 기대를 통해 형성된 <strong>자기와 타인에 대한 심리적 이미지</strong>(내면화된 표상).<br>
+      실제 사람이 아니라 <u>내면에 내면화된 관계의 표상</u>을 의미.</p>
+    </div>
+    <div class="concept-card c-violet">
+      <h3>🔗 내면화된 대상관계</h3>
+      <p>초기 주양육자와의 경험이 내면화되어 형성된 자기·타인 표상 시스템.<br>
+      현재 관계를 <strong>초기 경험에 기반</strong>하여 해석·형성하게 만듦.</p>
+    </div>
+    <div class="concept-card c-amber">
+      <h3>✂️ 분열(Splitting)</h3>
+      <ul>
+        <li>타인을 <strong>전적으로 좋은 사람 또는 전적으로 나쁜 사람</strong>으로 이분법적으로 보는 것</li>
+        <li>아동이 관계에 대한 <strong>안전한 이미지 유지</strong>를 위해 부모의 부정적 측면을 분리</li>
+        <li>불안정 애착 → 압도적 감정·관계적 불안을 조절하는 <strong>방어기제</strong></li>
+        <li>양육자가 <strong>일관되지 않거나, 방임적이거나, 정서적으로 이용 불가</strong>할 때 형성</li>
+      </ul>
+    </div>
+    <div class="concept-card c-rose">
+      <h3>👨‍👩‍👧 분열이 가족치료에 미치는 영향</h3>
+      <ul>
+        <li>가족 안에서 <strong>양극화</strong> 초래 ("문제아 vs 희생자", "착한 부모 vs 나쁜 자녀")</li>
+        <li>경직된 관계 패턴으로 이어짐</li>
+        <li>치료 목표: 긍정·부정 측면을 <strong>함께(통합)</strong> 볼 수 있도록 돕는 것</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="key-point kp-amber" style="margin-top:16px;">
+    <span class="kp-icon">⚠️</span>
+    <div class="kp-body">
+      <strong>분열 함정 문제:</strong> "분열은 항상 병리적 방어기제이다" → 맥락에 따라 <strong>아동이 안전감을 유지하기 위한 발달적 방어</strong>이기도 함. "분열은 불안정 애착에서만 나타난다" → 애착 안정성과 무관하게 초기 발달에서도 나타날 수 있음.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S5: 방어기제 ─── -->
+<section id="s5">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,113,133,0.15);">🛡️</div>
+    <div class="section-title">내면화된 대상을 다루는 방어기제 <span>3가지 정확히 구별</span></div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card c-sky">
+      <h3>📥 내사(Introjection)</h3>
+      <ul>
+        <li>타인의 특성·태도 (특히 <strong>양육자</strong>)를 <strong>무의식적으로 흡수</strong></li>
+        <li>자신의 자아 개념의 일부로 <strong>내면화</strong>하는 과정</li>
+        <li>방향: <strong>타인 → 자기 내면</strong></li>
+      </ul>
+    </div>
+    <div class="concept-card c-rose">
+      <h3>📤 투사(Projection)</h3>
+      <ul>
+        <li>자신의 감정·생각·특성을 <strong>스스로 인식하지 않고</strong></li>
+        <li>그것을 <strong>다른 사람에게 돌려서 지각</strong>하는 무의식적 과정</li>
+        <li>내가 가진 감정·욕구·단점을 인정하기 어려워서 <strong>상대방이 가진 것처럼</strong> 느낌</li>
+        <li>방향: <strong>자기 내면 → 타인</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="key-point kp-rose" style="margin-top:14px;">
+    <span class="kp-icon">⚠️</span>
+    <div class="kp-body">
+      <strong>내사 vs 투사 혼동 주의!</strong><br>
+      내사(introjection): 타인 → 내 안으로 흡수 | 투사(projection): 내 것 → 타인에게 귀속<br>
+      둘 다 <strong>현실지각을 왜곡</strong>하고 <strong>관계 오해</strong>를 키울 수 있음.
+    </div>
+  </div>
+
+  <details style="margin-top:10px;">
+    <summary style="color:var(--rose)">📖 투사 vs 투사적 동일시 — 차이가 뭔가요?</summary>
+    <div class="details-body">
+      <strong>투사(Projection)</strong>: 나의 감정을 상대에게 귀속시키는 것. 상대방은 실제로 그렇게 행동하지 않아도 내가 그렇게 '인식'하는 것.<br><br>
+      <strong>투사적 동일시(Projective Identification)</strong>: 단순히 인식의 문제가 아니라, 투사한 내용에 맞게 <strong>상대방이 실제로 행동하게끔</strong> 관계가 조직됨. 즉, 상대방의 행동까지 바꾸는 과정.<br><br>
+      핵심 차이: <strong>투사 = 내 지각의 왜곡 | 투사적 동일시 = 상대방 행동까지 변화</strong>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S6: 투사적 동일시 ─── -->
+<section id="s6">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(74,222,128,0.15);">🔄</div>
+    <div class="section-title">투사적 동일시 <span>가장 중요한 개념</span></div>
+  </div>
+
+  <div class="warn-box">
+    <strong>📌 투사적 동일시 정의:</strong> 친밀한 관계·가족 역동에서 흔히 나타나며, 
+    투사한 내용에 맞게 <strong>상대방이 실제로 느끼고 행동하기 시작</strong>하는 관계적 과정.<br>
+    자기충족적 순환(self-fulfilling cycle)을 만들어냄.
+  </div>
+
+  <!-- 단계 흐름 -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>투사적 동일시의 3단계 메커니즘</div>
+    <div class="flow" style="flex-direction:column; align-items:stretch; gap:10px;">
+      <div class="flow-box" style="border-color:var(--sky); color:var(--sky); text-align:left; padding:12px 16px;">
+        <strong>① 투사(Projection)</strong><br>
+        <span style="font-size:13px; color:var(--muted)">자신이 받아들이기 어려운 감정/특성을 상대방에게 귀속시킴<br>예: "넌 항상 그렇게 화를 내!" (실제로 나 자신이 분노를 갖고 있음)</span>
+      </div>
+      <div style="text-align:center; color:var(--muted)">↓</div>
+      <div class="flow-box" style="border-color:var(--amber); color:var(--amber); text-align:left; padding:12px 16px;">
+        <strong>② 행동화(Enactment)</strong><br>
+        <span style="font-size:13px; color:var(--muted)">투사된 내용에 맞게 상대방이 실제로 행동하기 시작<br>예: 계속 "화내는 사람" 취급을 받으니 실제로 분노하게 됨</span>
+      </div>
+      <div style="text-align:center; color:var(--muted)">↓</div>
+      <div class="flow-box" style="border-color:var(--rose); color:var(--rose); text-align:left; padding:12px 16px;">
+        <strong>③ 강화(Reinforcement)</strong><br>
+        <span style="font-size:13px; color:var(--muted)">처음 투사한 사람의 믿음이 '확인'됨 → 자기강화적 순환 형성<br>예: "봐, 화내는 건 너야, 내가 아니야!"</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 예시 2가지 -->
+  <div class="concept-grid">
+    <div class="concept-card c-amber">
+      <h3>💥 예시 A: 분노하는 파트너</h3>
+      <ul>
+        <li>자신의 <strong>공격성</strong>을 견디기 어려운 사람</li>
+        <li>→ 배우자에게 투사 + "넌 항상 화를 내!"라고 자극</li>
+        <li>→ 배우자가 실제로 분노를 느끼고 행동</li>
+        <li>→ "봐, 화내는 건 너야!"로 믿음 강화</li>
+      </ul>
+    </div>
+    <div class="concept-card c-violet">
+      <h3>🤱 예시 B: 무력한 아이</h3>
+      <ul>
+        <li>자신의 <strong>의존적 감정</strong>을 견디기 어려운 어머니</li>
+        <li>→ 아이에게 의존성 투사</li>
+        <li>→ 아이는 내면화하여 점점 더 무력하게 행동</li>
+        <li>→ 어머니의 과보호·과통제 정당화</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 상호 투사적 동일시 -->
+  <div class="card" style="margin-top:14px; border-color:rgba(74,222,128,0.3);">
+    <div class="card-title" style="color:var(--green)"><span class="dot" style="background:var(--green)"></span>상호 투사적 동일시 (mutual projective identification)</div>
+    <p style="font-size:14px; color:#94a3b8; margin-bottom:12px;">두 사람이 <strong>서로에게 동시에</strong> 투사적 동일시를 행할 때 — 부부/연인 갈등에서 매우 흔함</p>
+
+    <div class="concept-grid">
+      <div class="concept-card c-sky">
+        <h3>파트너 A</h3>
+        <ul>
+          <li>취약함이 불편 → 정서적 의존성을 B에게 투사</li>
+          <li>→ B를 거리두기로 몰아냄</li>
+          <li>B 믿음 확인: "넌 너무 의존적이야!"</li>
+        </ul>
+      </div>
+      <div class="concept-card c-rose">
+        <h3>파트너 B</h3>
+        <ul>
+          <li>정서적 거리감이 불편 → 차가움을 A에게 투사</li>
+          <li>→ A를 더 요구하고 매달리게 만듦</li>
+          <li>A 믿음 확인: "넌 너무 차가워!"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-point kp-amber" style="margin-top:12px; margin-bottom:0;">
+      <span class="kp-icon">🔁</span>
+      <div class="kp-body">결과: <strong>갈등은 해결보다 반복의 방향으로 굳어짐</strong>. 당사자들은 문제를 공동으로 만들고 있다는 점을 인식하지 못하고, 각자 원인을 상대에게서만 찾음.<br>
+      치료 목표: 이 순환을 <strong>함께 보게</strong> 하고 반응 패턴을 다르게 선택하도록 돕는 것.</div>
+    </div>
+  </div>
+
+  <!-- 상담사 구별 기준 -->
+  <details style="margin-top:10px;">
+    <summary style="color:var(--teal)">🔍 상담사가 내담자의 투사를 구별하는 기준 (단답형 대비)</summary>
+    <div class="details-body">
+      <ul>
+        <li><strong>내담자 반응의 강도와 경직성</strong> — 투사인 경우 유난히 강하고 유연하지 않은 반응</li>
+        <li><strong>관계의 역사 속에서 반복되는 패턴</strong> — 다른 관계에서도 반복됨</li>
+        <li><strong>상담사-내담자 상호작용에서 투사적 동일시의 확인</strong> — 치료 관계 안에서도 나타남</li>
+        <li><strong>"나"에 대한 이야기 부재</strong> — 모든 이야기가 타인 중심, 자신의 역할 무시</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S7: 전이·역전이 ─── -->
+<section id="s7">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(56,189,248,0.15);">↔️</div>
+    <div class="section-title">전이와 역전이 <span>치료적 관계</span></div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card c-sky">
+      <h3>📨 전이(Transference)</h3>
+      <ul>
+        <li>내담자가 치료자에게 <strong>과거 중요한 관계에서 형성된 감정, 기대, 관계 패턴</strong>을 무의식적으로 옮겨오는 것</li>
+        <li>방향: <strong>내담자 → 치료자</strong></li>
+        <li>초기 관계 표상이 치료 관계 안으로 재현</li>
+      </ul>
+    </div>
+    <div class="concept-card c-violet">
+      <h3>📩 역전이(Countertransference)</h3>
+      <ul>
+        <li>치료자가 내담자에게 <strong>자신의 무의식적 감정이나 반응</strong>을 느끼고 반응하는 것</li>
+        <li>방향: <strong>치료자 → 내담자</strong></li>
+        <li>현대에는 치료 과정 이해를 위한 <strong>중요한 도구</strong>로 활용</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="key-point kp-violet" style="margin-top:14px;">
+    <span class="kp-icon">⚠️</span>
+    <div class="kp-body">
+      <strong>전이 vs 역전이 방향 혼동 주의:</strong><br>
+      전이: <u>내담자</u>가 <u>치료자</u>에게 과거 감정을 투여<br>
+      역전이: <u>치료자</u>가 <u>내담자</u>에게 무의식적 반응을 보임<br>
+      둘 다 <strong>무의식적</strong> 과정이며, 초기 관계 경험에서 비롯됨
+    </div>
+  </div>
+
+  <div class="key-point kp-teal">
+    <span class="kp-icon">💡</span>
+    <div class="kp-body">
+      <strong>가족치료에서 전이:</strong> 단순히 치료자-내담자 관계에만 적용되는 것이 아니라, 가족 구성원들이 서로에게 과거 관계 표상을 투여하는 것도 전이의 확장된 개념으로 볼 수 있음.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S8: 정상 발달 ─── -->
+<section id="s8">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(74,222,128,0.15);">🌱</div>
+    <div class="section-title">이상적인 가족 발달 <span>정상 발달 개념</span></div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card c-green">
+      <h3>🌿 분리-개별화 (Mahler)</h3>
+      <ul>
+        <li>신뢰할 수 있고 사랑이 담긴 지지가 필요</li>
+        <li>"충분히 좋은 어머니(good-enough mothering)"</li>
+        <li>아이가 어머니를 <strong>독립된 존재</strong>로 인식하면서 <strong>자신만의 정체성</strong> 형성</li>
+        <li><strong>건강한 발달 = 애착을 잃는 것이 아니라, 애착 속에서 자율성을 키우는 것</strong></li>
+      </ul>
+    </div>
+    <div class="concept-card c-teal">
+      <h3>🪞 반영(Mirroring)</h3>
+      <ul>
+        <li>이해와 수용 — "네가 어떻게 느끼는지 알아"</li>
+        <li>아이의 <strong>내적 경험을 인정하고 공감</strong>해주는 것</li>
+        <li>안정적이고 통합된 자아 형성에 핵심</li>
+      </ul>
+    </div>
+    <div class="concept-card c-amber">
+      <h3>⭐ 이상화 모델(Idealization)</h3>
+      <ul>
+        <li>"우리 엄마는 정말 훌륭해, 나는 그런 엄마의 일부야"</li>
+        <li>아이가 <strong>안정적인 자존감의 기반</strong>을 형성</li>
+        <li>자기심리학(Kohut)과 연결되는 개념</li>
+      </ul>
+    </div>
+    <div class="concept-card c-rose">
+      <h3>⚡ 심리적 문제의 발생</h3>
+      <ul>
+        <li>충분하지 못한 <strong>분리-개별화</strong>의 결과</li>
+        <li>의존 욕구가 충분히 충족되지 못한 경우</li>
+        <li>감정이 인정받지 못할 때 → <strong>거짓자기(false self)</strong> 형성</li>
+        <li>거짓자기: 타인의 인정을 얻기 위해 <strong>진짜 감정·욕구를 숨기는 방식</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-top:16px;">
+    <strong>⚠️ 거짓자기(False Self) vs 참자기(True Self):</strong><br>
+    • <strong>참자기(true self)</strong>: 개인의 진정한 감정·욕구·자발성이 살아있는 상태 (Winnicott)<br>
+    • <strong>거짓자기(false self)</strong>: 타인의 기대·요구에 맞추기 위해 진짜 자기를 억압한 상태<br>
+    → 거짓자기가 형성되는 원인: 감정이 인정받지 못하거나, 의존 욕구가 충족되지 않을 때
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S9: 치료 ─── -->
+<section id="s9">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(45,212,191,0.15);">🏥</div>
+    <div class="section-title">치료 목표 · 과정 · 기법</div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card c-teal">
+      <h3>🎯 치료의 목표</h3>
+      <ul>
+        <li><strong>개별화-분화</strong>(individuation-differentiation) 촉진</li>
+        <li>가족구성원이 <strong>무의식적 제약</strong>에서 자유로워짐</li>
+        <li>분리되었던 <strong>자기의 부분들을 다시 통합</strong></li>
+        <li>가족 안에서도 <strong>자기 생각과 감정을 유지</strong>할 수 있게 됨</li>
+      </ul>
+    </div>
+    <div class="concept-card c-violet">
+      <h3>🔬 사정(Assessment) 특징</h3>
+      <ul>
+        <li><strong>깊이 있는 탐색</strong>과 무의식의 드러냄</li>
+        <li>현재 갈등의 <strong>뿌리와 반복 양상</strong> 탐색</li>
+        <li>가족이 <strong>과거 경험을 현재 관계 속에서 재연</strong>하는 방식 해석</li>
+        <li>매우 오랜 시간 + <strong>정서적 안전</strong> 필요</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(45,212,191,0.3);">
+    <div class="card-title" style="color:var(--teal)"><span class="dot" style="background:var(--teal)"></span>4가지 핵심 기법 <badge class="badge badge-red">단답형 출제 가능</badge></div>
+    <div class="concept-grid" style="margin-top:4px;">
+      <div class="concept-card c-sky" style="padding:14px 16px;">
+        <h3>👂 경청(Listening)</h3>
+        <p>표면적 내용뿐 아니라 무의식적 의미, 반복 패턴까지 귀 기울이는 것</p>
+      </div>
+      <div class="concept-card c-green" style="padding:14px 16px;">
+        <h3>💚 공감(Empathy)</h3>
+        <p>내담자의 내적 경험을 이해하고 함께 느끼는 것. 치료적 관계의 기반</p>
+      </div>
+      <div class="concept-card c-amber" style="padding:14px 16px;">
+        <h3>💬 해석(Interpretation)</h3>
+        <p>무의식적 의미, 전이, 투사 등을 언어화하여 통찰을 촉진하는 것</p>
+      </div>
+      <div class="concept-card c-violet" style="padding:14px 16px;">
+        <h3>⚖️ 분석적 중립성(Analytic Neutrality)</h3>
+        <p>치료자가 특정 입장 없이 중립적 태도로 탐색을 촉진하는 것</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3>📌 핵심 정리 — 수업 마지막 결론</h3>
+    <ol>
+      <li><strong>가족문제</strong>는 <strong>상호작용의 문제</strong>이면서 동시에 <strong>내면화된 관계의 문제</strong>다.</li>
+      <li>치료는 <strong>통찰</strong>을 촉진하고 반복되는 관계패턴을 다르게 경험하도록 돕는다.</li>
+      <li>가족구성원은 <strong>투사·전이·분열의 반복</strong>을 인식하고 보다 <strong>통합적으로 반응</strong>하는 연습을 한다.</li>
+      <li><strong>작업화(working through)</strong> 과정: 단순한 통찰로 끝나지 않고, 반복적으로 새로운 방식으로 경험하며 변화하는 것.</li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── S10: 퀴즈 ─── -->
+<section id="s10">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,0.15);">📝</div>
+    <div class="section-title">실전 연습 퀴즈 <span>정답 클릭으로 확인</span></div>
+  </div>
+
+  <div class="warn-box">
+    각 문제를 먼저 혼자 풀어본 후 <strong>답 보기</strong> 버튼을 누르세요.
+  </div>
+
+  <div class="quiz-wrap">
+
+    <div class="quiz-item" id="q1">
+      <div class="quiz-q">Q1. 다음 중 체계적 가족치료와 정신분석적 가족치료의 비교로 <strong>옳은 것</strong>은?<br>
+        ① 체계적 접근은 과거 중심, 정신분석적 접근은 현재 중심이다.<br>
+        ② 체계적 접근의 변화 단위는 가족 전체이고, 정신분석적 접근은 개인이다.<br>
+        ③ 두 접근 모두 치료자의 역할을 '해석자'로 본다.<br>
+        ④ 정신분석적 접근은 순환적 인과관계를 강조한다.
+      </div>
+      <button class="btn-reveal" onclick="toggle('q1')">답 보기</button>
+      <div class="quiz-a">✅ 정답: <strong>②</strong><br>
+        ① 반대. 체계 = 현재중심, 정신분석 = 과거중심<br>
+        ③ 체계적 접근 치료자는 중재자·촉진자. 해석자는 정신분석 접근<br>
+        ④ 순환적 인과관계는 체계 접근. 정신분석은 일방향적 인과(내면화된 관계) 강조
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q2">
+      <div class="quiz-q">Q2. 분열(splitting)에 대한 설명으로 <strong>옳지 않은 것</strong>은?<br>
+        ① 타인을 전적으로 좋거나 나쁜 사람으로 이분법적으로 인식하는 것이다.<br>
+        ② 불안정 애착을 가진 개인에게서 나타나며, 관계적 불안을 조절하는 방어기제이다.<br>
+        ③ 분열은 항상 양육자가 방임적일 때만 형성된다.<br>
+        ④ 가족 역동에서 양극화를 초래할 수 있다.
+      </div>
+      <button class="btn-reveal" onclick="toggle('q2')">답 보기</button>
+      <div class="quiz-a">✅ 정답: <strong>③</strong><br>
+        분열은 양육자가 <strong>일관되지 않거나</strong>, 방임적이거나, 정서적으로 이용 불가능할 때 형성됨. "방임적일 때만"은 틀림.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q3">
+      <div class="quiz-q">Q3. 투사(Projection)와 내사(Introjection)의 차이를 서술하시오. (단답형)</div>
+      <button class="btn-reveal" onclick="toggle('q3')">답 보기</button>
+      <div class="quiz-a">
+        <strong>내사(Introjection)</strong>: 타인(특히 양육자)의 특성·태도를 무의식적으로 흡수하여 <strong>자신의 자아 개념의 일부로 내면화</strong>하는 과정. (타인 → 자기)<br><br>
+        <strong>투사(Projection)</strong>: 자신의 감정·생각·특성을 스스로 인식하지 않고 <strong>다른 사람에게 돌려서 지각</strong>하는 무의식적 과정. (자기 → 타인)<br><br>
+        핵심 차이: 방향이 반대. 내사는 외부를 내면으로 취하고, 투사는 내면을 외부로 귀속시킴.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q4">
+      <div class="quiz-q">Q4. 투사적 동일시(Projective Identification)에 대한 설명으로 <strong>모두 옳은 것</strong>은?<br>
+        ① 친밀한 관계에서 흔히 나타나는 관계적 과정이다.<br>
+        ② 상대방이 투사된 내용에 맞게 실제로 행동하게 된다.<br>
+        ③ 단순 투사와 달리, 상대방의 실제 행동 변화를 수반한다.<br>
+        ④ 이 과정은 자기충족적 순환(self-fulfilling cycle)을 만든다.<br>
+        ⑤ 처음 투사한 사람은 자신의 투사를 명확히 인식한다.
+      </div>
+      <button class="btn-reveal" onclick="toggle('q4')">답 보기</button>
+      <div class="quiz-a">✅ 정답: <strong>①②③④</strong> (⑤만 제외)<br>
+        ⑤는 틀림. 투사적 동일시는 <strong>무의식적</strong> 과정이므로 처음 투사한 사람은 자신의 역할을 인식하지 못함.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q5">
+      <div class="quiz-q">Q5. Winnicott의 "거짓자기(False Self)"가 형성되는 원인은?</div>
+      <button class="btn-reveal" onclick="toggle('q5')">답 보기</button>
+      <div class="quiz-a">
+        자신의 <strong>감정과 정서가 충분히 인정받지 못할 때</strong>, 또는 <strong>의존 욕구가 충분히 충족되지 못할 때</strong>.<br><br>
+        아이가 타인의 인정을 얻기 위해 진정한 자신의 모습(참자기, true self)을 숨기고 타인의 기대에 맞추는 방식으로 행동하게 되는 것.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q6">
+      <div class="quiz-q">Q6. 다음에서 설명하는 개념은?<br><br>
+        <em>"A는 정서적 거리감이 불편하여 이를 배우자 B에게 귀속시키고, B는 정서적 취약성이 불편하여 이를 A에게 귀속시킨다. 결국 A는 더 거리를 두고, B는 더 매달리게 되어 각자의 믿음이 강화된다."</em>
+      </div>
+      <button class="btn-reveal" onclick="toggle('q6')">답 보기</button>
+      <div class="quiz-a">✅ <strong>상호 투사적 동일시(Mutual Projective Identification)</strong><br><br>
+        두 파트너가 서로에게 동시에 투사적 동일시를 행하는 것. 자기강화적 순환(self-reinforcing cycle)을 형성하며, 갈등이 해결보다 반복의 방향으로 굳어짐.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q7">
+      <div class="quiz-q">Q7. 정신분석적 가족치료의 4가지 핵심 기법을 모두 쓰시오.</div>
+      <button class="btn-reveal" onclick="toggle('q7')">답 보기</button>
+      <div class="quiz-a">
+        ① <strong>경청(Listening)</strong><br>
+        ② <strong>공감(Empathy)</strong><br>
+        ③ <strong>해석(Interpretation)</strong><br>
+        ④ <strong>분석적 중립성(Analytic Neutrality)</strong>
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q8">
+      <div class="quiz-q">Q8. 다음 인물과 핵심 개념의 연결이 <strong>잘못된 것</strong>은?<br>
+        ① Klein — 투사적 동일시, 분열<br>
+        ② Winnicott — 참자기/거짓자기, 충분히 좋은 어머니<br>
+        ③ Freud — 대상관계이론, 관계 추구 강조<br>
+        ④ Dicks — 대상관계이론의 부부갈등 치료 적용<br>
+        ⑤ Fairbairn — 인간은 욕동보다 관계를 추구한다
+      </div>
+      <button class="btn-reveal" onclick="toggle('q8')">답 보기</button>
+      <div class="quiz-a">✅ 정답: <strong>③</strong><br>
+        Freud는 <strong>개인의 내면적(intrapsychic) 과정</strong> 중심. 성심리 발달, 리비도, 공격적 욕구 강조.<br>
+        대상관계이론과 관계 추구 강조는 → <strong>Fairbairn</strong>의 개념.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q9">
+      <div class="quiz-q">Q9. "부모가 잔소리를 한다 — 자녀가 회피한다"는 상황을 체계적 접근과 정신분석적 접근은 각각 어떻게 해석하는가?</div>
+      <button class="btn-reveal" onclick="toggle('q9')">답 보기</button>
+      <div class="quiz-a">
+        <strong>체계적 접근:</strong><br>
+        현재의 상호작용 패턴에 초점. "잔소리-회피"는 <strong>순환적 인과관계</strong>로 서로가 서로의 행동을 강화하는 패턴. 의사소통 구조와 현재 관계 패턴을 변화시키는 것이 목표.<br><br>
+        <strong>정신분석적 접근:</strong><br>
+        부모의 잔소리 → 과거 어린 시절 통제받았던 <strong>내면화된 대상관계</strong>의 재연 가능성, 또는 자녀에 대한 <strong>투사</strong>(자신의 불안을 자녀에게 귀속). 자녀의 회피 → 거짓자기 형성이나 불안정 애착의 표현. <strong>무의식적 과거 경험</strong>을 탐색하는 것이 목표.
+      </div>
+    </div>
+
+    <div class="quiz-item" id="q10">
+      <div class="quiz-q">Q10. 전이(Transference)와 역전이(Countertransference)의 차이를 설명하시오.</div>
+      <button class="btn-reveal" onclick="toggle('q10')">답 보기</button>
+      <div class="quiz-a">
+        <strong>전이(Transference)</strong>: <u>내담자</u>가 <u>치료자</u>에게 과거 중요한 관계에서 형성된 감정·기대·관계 패턴을 <strong>무의식적으로 옮겨오는</strong> 것.<br><br>
+        <strong>역전이(Countertransference)</strong>: <u>치료자</u>가 <u>내담자</u>에게 자신의 무의식적 감정이나 반응을 느끼고 반응하는 것.<br><br>
+        핵심: 방향이 반대. 전이 = 내담자→치료자, 역전이 = 치료자→내담자. 둘 다 무의식적 과정.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FINAL NOTE ─── -->
+<section style="padding:40px 0;">
+  <div class="summary-box">
+    <h3>🎓 기말고사 최종 암기 포인트 10가지</h3>
+    <ol>
+      <li>초기 가족치료자들은 <strong>정신분석 훈련 → 체계 접근으로 전환</strong>했다가, 1980년대 이후 정신역동 재주목</li>
+      <li>체계 = <strong>현재·순환·가족 전체</strong> / 정신분석 = <strong>과거·무의식·개인</strong></li>
+      <li><strong>대상(object)</strong>: 실제 사람이 아닌 <strong>내면화된 심리적 표상</strong></li>
+      <li><strong>분열(splitting)</strong>: 타인을 완전히 좋거나 나쁘게 보는 이분법적 방어기제. 가족 내 양극화 초래</li>
+      <li><strong>내사</strong>: 타인 → 내 안 / <strong>투사</strong>: 내 것 → 타인에게. 방향 반대!</li>
+      <li><strong>투사적 동일시</strong> = 단순 투사와 달리 <strong>상대방의 실제 행동까지 변화</strong>시킴. 자기충족적 순환 형성</li>
+      <li><strong>Klein</strong>=투사적동일시·분열 / <strong>Winnicott</strong>=참자기·거짓자기·충분히좋은어머니 / <strong>Fairbairn</strong>=대상관계·관계추구 / <strong>Dicks</strong>=부부갈등에 대상관계 최초 적용</li>
+      <li><strong>전이</strong>(내담자→치료자) vs <strong>역전이</strong>(치료자→내담자). 둘 다 무의식적 과정</li>
+      <li><strong>거짓자기</strong>: 감정 인정받지 못하거나 의존 욕구 미충족 → 타인 인정을 위해 진짜 자기를 숨김</li>
+      <li>치료의 4기법: <strong>경청·공감·해석·분석적 중립성</strong></li>
+    </ol>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  const btn = el.querySelector('.btn-reveal');
+  btn.textContent = el.classList.contains('open') ? '답 숨기기' : '답 보기';
+}
+</script>
+</body>
+</html>
