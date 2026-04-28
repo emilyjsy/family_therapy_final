@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인지행동 가족치료 — 기말고사 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b27;
+    --card: #1c2235;
+    --border: #262d45;
+    --indigo: #818cf8;
+    --indigo-dim: rgba(129,140,248,0.12);
+    --emerald: #34d399;
+    --emerald-dim: rgba(52,211,153,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --rose: #fb7185;
+    --rose-dim: rgba(251,113,133,0.12);
+    --sky: #38bdf8;
+    --sky-dim: rgba(56,189,248,0.12);
+    --orange: #fb923c;
+    --orange-dim: rgba(251,146,60,0.12);
+    --text: #e2e8f0;
+    --muted: #8892a8;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.75; padding-bottom: 80px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #0d1117 0%, #161b35 55%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 44px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(129,140,248,0.1) 0%, transparent 70%);
+  }
+  .hero-label { font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:var(--indigo); font-weight:500; margin-bottom:14px; }
+  .hero h1 { font-family:var(--serif); font-size:clamp(24px,5vw,42px); font-weight:700; color:#fff; line-height:1.25; margin-bottom:12px; }
+  .hero h1 span { color:var(--indigo); }
+  .hero-sub { color:var(--muted); font-size:14px; max-width:460px; margin:0 auto 24px; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .tag { background:var(--indigo-dim); border:1px solid rgba(129,140,248,0.3); color:var(--indigo); font-size:12px; padding:4px 12px; border-radius:100px; font-weight:500; }
+
+  /* NAV */
+  .nav-wrap { position:sticky; top:0; z-index:100; background:rgba(13,17,23,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 16px; overflow-x:auto; }
+  .nav { display:flex; white-space:nowrap; max-width:960px; margin:0 auto; }
+  .nav a { display:block; padding:13px 15px; color:var(--muted); font-size:12.5px; font-weight:500; text-decoration:none; border-bottom:2px solid transparent; transition:all .2s; }
+  .nav a:hover { color:var(--indigo); border-color:var(--indigo); }
+
+  /* LAYOUT */
+  .container { max-width:960px; margin:0 auto; padding:0 16px; }
+  section { padding:48px 0 0; }
+  .section-header { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+  .section-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+  .section-title { font-family:var(--serif); font-size:19px; font-weight:700; color:#fff; }
+  .section-title span { font-size:13px; font-weight:400; color:var(--muted); margin-left:8px; font-family:var(--sans); }
+
+  /* CARD */
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:14px; }
+  .card-title { font-size:14.5px; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+  /* GRID */
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+  @media(max-width:620px) { .grid2,.grid3 { grid-template-columns:1fr; } }
+
+  /* CONCEPT CARD */
+  .cc { border-radius:10px; padding:16px 18px; border:1px solid; }
+  .cc h3 { font-size:13.5px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+  .cc p, .cc li { font-size:13px; line-height:1.75; color:#a8b8cc; }
+  .cc ul { padding-left:16px; }
+  .c-ind { border-color:rgba(129,140,248,.35); background:var(--indigo-dim); }
+  .c-ind h3 { color:var(--indigo); }
+  .c-em { border-color:rgba(52,211,153,.35); background:var(--emerald-dim); }
+  .c-em h3 { color:var(--emerald); }
+  .c-am { border-color:rgba(251,191,36,.35); background:var(--amber-dim); }
+  .c-am h3 { color:var(--amber); }
+  .c-ro { border-color:rgba(251,113,133,.35); background:var(--rose-dim); }
+  .c-ro h3 { color:var(--rose); }
+  .c-sk { border-color:rgba(56,189,248,.35); background:var(--sky-dim); }
+  .c-sk h3 { color:var(--sky); }
+  .c-or { border-color:rgba(251,146,60,.35); background:var(--orange-dim); }
+  .c-or h3 { color:var(--orange); }
+
+  /* KEY POINT */
+  .kp { display:flex; gap:12px; align-items:flex-start; padding:14px 18px; border-radius:10px; margin-bottom:12px; border-left:3px solid; }
+  .kp-icon { font-size:17px; flex-shrink:0; margin-top:2px; }
+  .kp-body { font-size:13.5px; line-height:1.75; color:#c0cfdf; }
+  .kp-body strong { font-weight:700; }
+  .kp-ind { background:var(--indigo-dim); border-color:var(--indigo); }
+  .kp-am { background:var(--amber-dim); border-color:var(--amber); }
+  .kp-ro { background:var(--rose-dim); border-color:var(--rose); }
+  .kp-em { background:var(--emerald-dim); border-color:var(--emerald); }
+
+  /* WARN */
+  .warn { background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.35); border-radius:10px; padding:14px 18px; font-size:13.5px; color:#dfc87a; margin-bottom:14px; line-height:1.75; }
+  .warn strong { color:var(--amber); }
+
+  /* FLOW */
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0; }
+  .fb { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:8px 14px; font-size:13px; text-align:center; }
+  .fa { color:var(--muted); font-size:16px; }
+
+  /* ABC TABLE */
+  .abc-table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  .abc-table th { padding:11px 14px; text-align:left; font-weight:700; font-size:13px; }
+  .abc-table td { padding:10px 14px; border-top:1px solid var(--border); vertical-align:top; font-size:13px; color:#aabbd0; line-height:1.7; }
+  .abc-table tr:hover td { background:rgba(255,255,255,.02); }
+  .abc-table .label { font-weight:700; white-space:nowrap; }
+
+  /* OPERANT TABLE */
+  .op-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .op-table th, .op-table td { padding:11px 13px; border:1px solid var(--border); text-align:left; vertical-align:top; }
+  .op-table thead th { font-weight:700; background:var(--surface); }
+  .op-table .th-side { background:var(--surface); font-weight:700; color:var(--muted); }
+  .op-table .pos-r { background:rgba(52,211,153,.07); color:#a0e8cc; }
+  .op-table .pos-p { background:rgba(251,113,133,.07); color:#f4a0b0; }
+  .op-table .neg-r { background:rgba(129,140,248,.07); color:#c0c8f8; }
+  .op-table .neg-p { background:rgba(251,146,60,.07); color:#f8c080; }
+  .op-table .corner { background:var(--bg); }
+
+  /* ACCORDION */
+  details { background:var(--card); border:1px solid var(--border); border-radius:10px; margin-bottom:10px; overflow:hidden; }
+  summary { padding:15px 20px; font-weight:600; font-size:14px; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; user-select:none; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:'＋'; font-size:16px; color:var(--muted); flex-shrink:0; }
+  details[open] summary::after { content:'－'; }
+  .db { padding:0 20px 16px; font-size:13.5px; color:#a8b8cc; line-height:1.8; border-top:1px solid var(--border); padding-top:14px; }
+  .db ul { padding-left:18px; }
+  .db li { margin-bottom:6px; }
+  .db strong { color:var(--text); font-weight:600; }
+
+  /* QUIZ */
+  .quiz-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:10px; }
+  .quiz-q { font-size:14px; font-weight:600; margin-bottom:10px; color:var(--text); line-height:1.7; }
+  .quiz-a { background:var(--indigo-dim); border:1px solid rgba(129,140,248,.25); border-radius:6px; padding:10px 14px; font-size:13.5px; color:#b0bcf0; display:none; line-height:1.8; }
+  .quiz-item.open .quiz-a { display:block; }
+  .btn-reveal { background:none; border:1px solid var(--border); color:var(--muted); font-size:12px; padding:5px 12px; border-radius:6px; cursor:pointer; margin-top:6px; transition:all .2s; font-family:var(--sans); }
+  .btn-reveal:hover { border-color:var(--indigo); color:var(--indigo); }
+
+  /* DISTORTION GRID */
+  .dist-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; }
+  .dist-card { background:var(--surface); border:1px solid var(--border); border-radius:9px; padding:14px 15px; }
+  .dist-name { font-size:13px; font-weight:700; color:var(--rose); margin-bottom:5px; }
+  .dist-def { font-size:12.5px; color:#94a3b8; line-height:1.65; }
+
+  /* SUMMARY */
+  .summary-box { background:linear-gradient(135deg,rgba(129,140,248,.08),rgba(52,211,153,.08)); border:1px solid rgba(129,140,248,.25); border-radius:14px; padding:26px 26px; margin-top:8px; }
+  .summary-box h3 { font-family:var(--serif); font-size:16px; font-weight:700; color:var(--indigo); margin-bottom:14px; }
+  .summary-box ol { padding-left:20px; }
+  .summary-box li { margin-bottom:9px; font-size:14px; color:#c0d0e0; line-height:1.75; }
+  .summary-box li strong { color:var(--amber); }
+
+  .divider { height:1px; background:var(--border); margin:40px 0 0; }
+  .badge { display:inline-block; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  .badge-red { background:var(--rose-dim); color:var(--rose); border:1px solid rgba(251,113,133,.3); }
+  .badge-am { background:var(--amber-dim); color:var(--amber); border:1px solid rgba(251,191,36,.3); }
+
+  /* timeline */
+  .timeline { display:flex; flex-direction:column; gap:10px; margin:12px 0; }
+  .tl-item { display:flex; gap:14px; align-items:flex-start; }
+  .tl-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:7px; }
+  .tl-body { font-size:13.5px; color:#a8b8cc; line-height:1.75; }
+  .tl-body strong { color:var(--text); font-weight:600; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Cognitive-Behavioral Family Therapy · 9장</div>
+  <h1>인지행동<span>가족치료</span><br>기말고사 완전정복</h1>
+  <p class="hero-sub">행동주의 · ABC모형 · 인지왜곡 8가지 · 부모훈련 · 부부치료 — 모두 정확하게</p>
+  <div class="tags">
+    <span class="tag">조작적 조건형성</span>
+    <span class="tag">ABC 모형</span>
+    <span class="tag">인지왜곡 8가지</span>
+    <span class="tag">부모훈련</span>
+    <span class="tag">부부치료</span>
+    <span class="tag">사회교환이론</span>
+    <span class="tag">프리맥 원리</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#s1">①역사</a>
+    <a href="#s2">②고전적조건형성</a>
+    <a href="#s3">③조작적조건형성</a>
+    <a href="#s4">④인지이론</a>
+    <a href="#s5">⑤ABC모형</a>
+    <a href="#s6">⑥이론적정식화</a>
+    <a href="#s7">⑦인지왜곡</a>
+    <a href="#s8">⑧치료목표</a>
+    <a href="#s9">⑨부모훈련</a>
+    <a href="#s10">⑩부부치료</a>
+    <a href="#s11">⑪퀴즈</a>
+  </nav>
+</div>
+
+<div class="container">
+
+<!-- S1: 역사 -->
+<section id="s1">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(129,140,248,.15);">📜</div>
+    <div class="section-title">도입과 역사적 흐름 <span>시대 순서 파악</span></div>
+  </div>
+
+  <div class="card">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--indigo)"></div>
+        <div class="tl-body"><strong>1970년대:</strong> 행동주의 치료자들이 가족치료에 본격 개입 — 부모훈련, 행동주의 부부치료, 성치료</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--amber)"></div>
+        <div class="tl-body"><strong>이론 기반:</strong> 행동심리학 + 학습이론 → 이후 인지이론 통합 시작<br>
+          "왜곡된 신념/해석에 의해 반응한다" · "태도의 변화 → 행동의 변화"</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--emerald)"></div>
+        <div class="tl-body"><strong>1980년대 후반:</strong> 인지행동접근이 가족치료에 폭넓게 적용 시작</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--rose)"></div>
+        <div class="tl-body"><strong>핵심 전제:</strong> <strong>인지, 정서, 행동은 서로 영향을 미친다</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 함정 포인트:</strong> "인지행동가족치료는 처음부터 인지이론을 포함했다" → <strong>틀림</strong>.<br>
+    처음에는 <u>행동주의(행동심리학·학습이론)</u>에 기반했고, 이후에 인지이론이 <strong>통합</strong>되었음.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S2: 고전적 조건형성 -->
+<section id="s2">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(56,189,248,.15);">🔔</div>
+    <div class="section-title">고전적 조건형성 <span>파블로프 · 월피</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-sk">
+      <h3>🧪 파블로프 — 고전적 조건형성</h3>
+      <ul>
+        <li><strong>US</strong>(무조건 자극): 먹이 — 자연적으로 반응 유발</li>
+        <li><strong>UR</strong>(무조건 반응): 침 분비 — US에 의한 자연 반응</li>
+        <li><strong>CS</strong>(조건 자극): 종소리 — 중립 자극이 학습됨</li>
+        <li><strong>CR</strong>(조건 반응): 종소리만으로도 나타나는 <strong>학습된</strong> 침 분비</li>
+      </ul>
+    </div>
+    <div class="cc c-ind">
+      <h3>💆 월피 — 체계적 둔감법</h3>
+      <ul>
+        <li>고전적 조건형성 + <strong>상호억제 원리</strong> 기반</li>
+        <li>불안과 <strong>양립할 수 없는 반응</strong>(예: 근육 이완)을 불안 유발 자극과 함께 제시</li>
+        <li>점차 불안 반응을 약화시킴</li>
+        <li>예: 아기 울음소리, 비행기 탑승 → 이완 반응 결합으로 불안 감소</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 용어 혼동 주의:</strong><br>
+    • US/UR = 무조건(학습 없이 자연 발생) / CS/CR = 조건(학습된 것)<br>
+    • <strong>체계적 둔감법</strong>은 파블로프의 것이 아니라 <strong>월피(Wolpe)</strong>의 기법. 고전적 조건형성이 이론적 기반.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S3: 조작적 조건형성 -->
+<section id="s3">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,211,153,.15);">⚙️</div>
+    <div class="section-title">조작적 조건형성 <span>스키너 · 강화·처벌 표 완전 정복</span></div>
+  </div>
+
+  <div class="kp kp-em">
+    <span class="kp-icon">💡</span>
+    <div class="kp-body">
+      <strong>스키너(Skinner)</strong> — 70년대 행동주의 가족치료에 <strong>가장 큰 영향</strong>을 미침<br>
+      강화된 행동은 다시 나타날 가능성 ↑ | 처벌은 행동 가능성 ↓ | 강화 중단 → <strong>소거(extinction)</strong>
+    </div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;">
+    <div class="card-title"><span class="dot" style="background:var(--emerald)"></span>강화·처벌 4분면 — 이것이 핵심</div>
+    <table class="op-table">
+      <thead>
+        <tr>
+          <th class="corner"></th>
+          <th style="color:var(--emerald)">강화(Reinforcement) — 행동 증가·유지</th>
+          <th style="color:var(--rose)">처벌(Punishment) — 행동 감소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="th-side">정적(＋)<br><small>자극 제시</small></td>
+          <td class="pos-r">
+            <strong>정적 강화</strong><br>
+            쾌자극을 <u>더해</u> 행동 증가·유지<br>
+            예: 심부름하면 칭찬·간식
+          </td>
+          <td class="pos-p">
+            <strong>정적 처벌</strong><br>
+            혐오 자극을 <u>더해</u> 행동 감소<br>
+            예: 규칙 위반 → 꾸중·벌
+          </td>
+        </tr>
+        <tr>
+          <td class="th-side">부적(−)<br><small>자극 제거</small></td>
+          <td class="neg-r">
+            <strong>부적 강화</strong><br>
+            혐오 자극을 <u>제거</u>하여 행동 증가·유지<br>
+            예: 숙제하면 잔소리 그만
+          </td>
+          <td class="neg-p">
+            <strong>부적 처벌 (반응대가)</strong><br>
+            쾌자극을 <u>제거</u>하여 행동 감소<br>
+            예: 규칙 위반 → 게임 시간 빼앗음
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 가장 많이 틀리는 것 — 부적 강화 vs 처벌:</strong><br>
+    • <strong>부적 강화</strong>는 처벌이 <u>아님</u>! 싫은 것을 제거해서 행동을 <strong>증가</strong>시키는 것<br>
+    • "부적 = 나쁜 것"이 아니라 "부적 = 제거(minus)"의 의미<br>
+    • <strong>소거(extinction)</strong>: 이전에 강화되던 행동이 더 이상 강화되지 않으면 점차 사라지는 것
+  </div>
+
+  <details>
+    <summary style="color:var(--emerald)">📖 각 개념 예시로 완전히 구별하기</summary>
+    <div class="db">
+      <ul>
+        <li><strong>정적 강화:</strong> 공부를 잘하면 칭찬을 준다 → 공부 행동 증가</li>
+        <li><strong>부적 강화:</strong> 안전벨트 착용 시 경고음이 꺼진다 → 착용 행동 증가</li>
+        <li><strong>정적 처벌:</strong> 지각하면 청소를 시킨다 → 지각 행동 감소</li>
+        <li><strong>부적 처벌(반응대가):</strong> 싸우면 스마트폰을 압수한다 → 싸움 행동 감소</li>
+        <li><strong>소거:</strong> 아이가 떼를 쓰면 무시한다 (강화 중단) → 떼쓰기 점차 감소</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- S4: 인지이론 -->
+<section id="s4">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,.15);">🧩</div>
+    <div class="section-title">인지주의 학파 <span>엘리스 · 벡</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-am">
+      <h3>📊 아론 벡 — 인지적 매개 모형</h3>
+      <ul>
+        <li>정서와 행동이 <strong>신념, 귀인, 기대</strong> 같은 인지에 의해 <strong>매개</strong>된다</li>
+        <li>인지(신념) → 정서 → 행동의 흐름 강조</li>
+        <li>인지 왜곡 유형 체계화 (8가지)</li>
+      </ul>
+    </div>
+    <div class="cc c-ind">
+      <h3>🔤 알버트 엘리스 — ABC 모형</h3>
+      <ul>
+        <li>사건 자체보다 <strong>그 사건에 대한 신념(B)</strong>이 결과(C)를 결정</li>
+        <li>A→C가 아니라 <strong>A→B→C</strong></li>
+        <li>비합리적 신념을 합리적 신념으로 수정하는 것이 치료 핵심</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kp kp-am">
+    <span class="kp-icon">⚠️</span>
+    <div class="kp-body">
+      <strong>벡 vs 엘리스 구별:</strong> 벡 = <strong>인지적 매개 모형</strong>(인지가 매개함) | 엘리스 = <strong>ABC 모형</strong>(신념이 결과를 결정).<br>
+      둘 다 "인지"를 강조하지만 접근이 약간 다름. 공통점: 행동치료에 <strong>인지적 요소를 도입</strong>했다는 것.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S5: ABC 모형 -->
+<section id="s5">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,113,133,.15);">🔤</div>
+    <div class="section-title">ABC 모형 완전 정복 <span>단답형·사례 적용 필수</span></div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;">
+    <table class="abc-table">
+      <thead>
+        <tr>
+          <th style="color:var(--rose); width:60px;">기호</th>
+          <th style="color:var(--rose);">명칭</th>
+          <th style="color:var(--rose);">정의</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label" style="color:var(--sky);">A</td>
+          <td style="color:var(--text); font-weight:600;">선행사건<br>(Activating Event)</td>
+          <td>강한 정서적 반응을 유발하는 <strong>사건이나 상황</strong></td>
+        </tr>
+        <tr>
+          <td class="label" style="color:var(--amber);">B</td>
+          <td style="color:var(--text); font-weight:600;">신념<br>(Beliefs)</td>
+          <td>선행사건에 대해 개인이 갖게 되는 <strong>믿음, 해석, 평가</strong><br>→ 합리적 신념 vs 비합리적 신념으로 구분</td>
+        </tr>
+        <tr>
+          <td class="label" style="color:var(--emerald);">C</td>
+          <td style="color:var(--text); font-weight:600;">결과<br>(Consequences)</td>
+          <td>그 신념으로 인해 나타나는 <strong>정서적·행동적 결과</strong><br>→ 바람직한/바람직하지 않은 정서·행동으로 구분</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 메리 예시 -->
+  <div class="card" style="border-color:rgba(251,113,133,.3);">
+    <div class="card-title" style="color:var(--rose)"><span class="dot" style="background:var(--rose)"></span>메리 예시 — A→B→C 흐름</div>
+    <div class="kp kp-ro" style="margin-bottom:10px;">
+      <span class="kp-icon">📌</span>
+      <div class="kp-body"><strong>A (선행사건):</strong> 메리와 남자친구가 헤어졌다.</div>
+    </div>
+    <div class="grid2" style="margin-bottom:10px;">
+      <div class="cc c-em" style="padding:14px;">
+        <h3>✅ 합리적 신념(B)</h3>
+        <p>"슬픈 일이지만, 우리는 서로 잘 맞지 않았고 이 경험에서 배울 수 있을 거야"</p>
+      </div>
+      <div class="cc c-ro" style="padding:14px;">
+        <h3>❌ 비합리적 신념(B)</h3>
+        <p>"헤어진 건 전부 내 잘못이야. 나는 사랑받을 수 없는 사람이고, 앞으로도 모든 관계에서 실패할 거야"</p>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="cc c-em" style="padding:14px;">
+        <h3>✅ 바람직한 결과(C)</h3>
+        <p><strong>정서:</strong> 슬프지만, 앞으로 좋은 관계를 맺을 수 있다는 희망<br>
+        <strong>행동:</strong> 새로운 건강한 관계를 만들고, 경험에서 배우려 함</p>
+      </div>
+      <div class="cc c-ro" style="padding:14px;">
+        <h3>❌ 바람직하지 않은 결과(C)</h3>
+        <p><strong>정서:</strong> 죄책감, 사랑받을 수 없다는 감정<br>
+        <strong>행동:</strong> 어차피 실패할 것이라며 새로운 관계를 시작하지 않겠다고 결심</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="kp kp-ro">
+    <span class="kp-icon">⚠️</span>
+    <div class="kp-body">
+      <strong>핵심 원리:</strong> A가 C를 직접 결정하는 것이 아님. <strong>B(신념·해석)가 C를 결정</strong>함.<br>
+      같은 사건(A=이별)이라도 어떻게 해석하느냐(B)에 따라 결과(C)가 완전히 달라짐.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S6: 이론적 정식화 -->
+<section id="s6">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,211,153,.15);">📐</div>
+    <div class="section-title">이론적 정식화 <span>사회교환이론 · 건강한 가족 · 문제 발생</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-em">
+      <h3>💰 사회교환이론 (Social Exchange Theory)</h3>
+      <ul>
+        <li>사람들은 관계에서 <strong>보상은 최대화</strong>하고 <strong>비용은 최소화</strong>하려 함</li>
+        <li>행동은 더 큰 보상을 주는 결과가 도입되기 전까지 <strong>변화에 저항</strong>적으로 유지됨</li>
+        <li>인지주의: 행동변화를 위해 먼저 <strong>사고·신념·태도의 변화</strong>가 필요</li>
+      </ul>
+    </div>
+    <div class="cc c-ind">
+      <h3>🏡 건강한 가족의 특징</h3>
+      <ul>
+        <li>주고받음의 균형 — 보상 극대화, 비용 최소화 → 높은 만족도</li>
+        <li>효과적인 <strong>의사소통 기술, 문제해결 기술, 갈등 해결 능력</strong></li>
+        <li>상황에 따라 <strong>적응·유연·변화 수용</strong> 능력</li>
+        <li>관계 기술과 효과적 대처 전략을 <strong>학습</strong>한 가족</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(251,113,133,.3);">
+    <div class="card-title" style="color:var(--rose)"><span class="dot" style="background:var(--rose)"></span>행동장애의 발달 — 문제 발생 원인</div>
+    <div class="grid2">
+      <div class="cc c-ro" style="padding:14px;">
+        <h3>🔄 행동주의 관점</h3>
+        <ul>
+          <li>증상 = <strong>조작적 조건형성에 의해 학습된 반응</strong></li>
+          <li>증상에 깊은 상징적 의미 없음 → <strong>증상 그 자체를 다룸</strong></li>
+          <li>증상을 <strong>강화하고 유지시키는 환경(가족)의 반응</strong>에 초점</li>
+          <li>예: 아이 울고 떼 쓰면 부모가 숙제 면제 → 부적 강화 → 떼쓰기 지속</li>
+        </ul>
+      </div>
+      <div class="cc c-am" style="padding:14px;">
+        <h3>🧠 인지적 관점</h3>
+        <ul>
+          <li><strong>역기능적 도식(dysfunctional schemas)</strong>: 자기, 타인, 관계에 대해 왜곡되고 경직된 건강하지 못한 신념 체계</li>
+          <li>원가족 경험에서 비롯되는 경우가 많음</li>
+          <li><strong>인지적 왜곡(Cognitive Distortions)</strong>으로 이어짐</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 행동주의 vs 정신역동 관점 차이:</strong><br>
+    행동주의: 증상에 <strong>상징적 의미 없음</strong> — 증상 자체와 그것을 강화하는 환경 반응에 초점<br>
+    정신역동: 증상에는 <strong>무의식적 의미</strong>가 있고, 과거 경험에 초점
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S7: 인지 왜곡 -->
+<section id="s7">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,113,133,.15);">🌀</div>
+    <div class="section-title">인지적 왜곡 8가지 <span class="badge badge-red">단답형 단골 — 전부 암기</span></div>
+  </div>
+
+  <div class="warn">
+    <strong>📌 8가지 모두 정확히 알아야 함!</strong> 이름 + 정의 모두 출제 가능.
+  </div>
+
+  <div class="dist-grid">
+    <div class="dist-card">
+      <div class="dist-name">① 임의적 추론<br>(Arbitrary Inference)</div>
+      <div class="dist-def">충분한 증거 없이 <strong>임의로 결론</strong>을 내림<br>예: "그 사람이 나를 싫어하는 게 틀림없어" (실제 근거 없음)</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">② 선택적 추상<br>(Selective Abstraction)</div>
+      <div class="dist-def">전체 맥락을 무시하고 <strong>일부 세부 사항만 골라</strong> 결론을 내림<br>예: 긍정적 피드백 10개 중 부정 1개만 집중</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">③ 과잉 일반화<br>(Overgeneralization)</div>
+      <div class="dist-def">한두 번의 사건을 <strong>모든 상황에 적용</strong>하는 광범위한 결론<br>예: "나는 항상 실패해", "아무것도 제대로 되는 게 없어"</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">④ 확대와 축소<br>(Magnification &amp; Minimization)</div>
+      <div class="dist-def">사건의 중요성이나 의미를 <strong>과대평가(확대)하거나 과소평가(축소)</strong>함<br>예: 실수를 재앙으로 / 성과를 사소하게</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">⑤ 개인화<br>(Personalization)</div>
+      <div class="dist-def">자신과 관련 없는 외부 사건을 <strong>자신과 연결</strong>지어 책임 귀속<br>예: "오늘 회의 분위기가 안 좋았던 건 내 탓이야"</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">⑥ 이분법적 사고<br>(Dichotomous Thinking)</div>
+      <div class="dist-def">상황을 <strong>흑 아니면 백, 전부 아니면 전무</strong>로만 봄 (흑백논리)<br>예: "완벽하지 않으면 완전한 실패야"</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">⑦ 낙인찍기·오표상<br>(Labeling &amp; Mislabeling)</div>
+      <div class="dist-def"><strong>자신이나 타인에게 부정적인 꼬리표</strong>를 붙이거나, 잘못된 명칭을 부여<br>예: "나는 패배자야", "그 사람은 형편없어"</div>
+    </div>
+    <div class="dist-card">
+      <div class="dist-name">⑧ 독심술 / 마음 읽기<br>(Mind Reading)</div>
+      <div class="dist-def">실제 확인 없이 <strong>타인의 생각·의도를 안다고 확신</strong>함<br>예: "그 사람이 나를 비웃고 있다는 걸 알아"</div>
+    </div>
+  </div>
+
+  <details style="margin-top:12px;">
+    <summary style="color:var(--rose)">🔍 헷갈리는 개념 집중 비교</summary>
+    <div class="db">
+      <ul>
+        <li><strong>임의적 추론 vs 독심술:</strong> 임의적 추론은 일반적 결론 비약 / 독심술은 <u>특히 타인의 마음</u>을 안다고 확신하는 것</li>
+        <li><strong>선택적 추상 vs 과잉 일반화:</strong> 선택적 추상은 <u>일부 정보만 선택</u>해 결론 / 과잉 일반화는 <u>일부 사례를 전체</u>에 적용</li>
+        <li><strong>확대 vs 개인화:</strong> 확대는 사건의 <u>크기를 부풀리는 것</u> / 개인화는 <u>나와 관련 없는 것을 내 책임</u>으로 돌리는 것</li>
+        <li><strong>낙인찍기 vs 이분법적 사고:</strong> 낙인찍기는 <u>이름표 붙이기</u> / 이분법적 사고는 <u>극단적 양자택일</u></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- S8: 치료 목표 -->
+<section id="s8">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(129,140,248,.15);">🎯</div>
+    <div class="section-title">인지행동가족치료의 목표</div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-ind">
+      <h3>🔵 행동적 목표</h3>
+      <ul>
+        <li>가족관계에서 <strong>보상적 상호작용의 빈도 증가</strong></li>
+        <li>부정적 가족 상호작용 감소, 긍정적 상호작용 증가</li>
+        <li>효과적인 <strong>의사소통 기술, 문제해결 기술</strong> 습득</li>
+      </ul>
+    </div>
+    <div class="cc c-am">
+      <h3>🟡 인지적 목표</h3>
+      <ul>
+        <li>가족을 대하고 생각하는 방식에서 <strong>인지적 변화 촉진</strong></li>
+        <li><strong>부정적 사고패턴 수정</strong></li>
+        <li>비효율적 가족 상호작용 감소 → 효과적 상호작용 촉진·유지</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S9: 부모훈련 -->
+<section id="s9">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,211,153,.15);">👨‍👩‍👧</div>
+    <div class="section-title">행동주의 부모훈련 <span>평가 + 기법 세트로 암기</span></div>
+  </div>
+
+  <div class="card" style="border-color:rgba(52,211,153,.3);">
+    <div class="card-title" style="color:var(--emerald)"><span class="dot" style="background:var(--emerald)"></span>평가(Assessment) 단계</div>
+    <div class="grid2">
+      <div>
+        <p style="font-size:13.5px; color:#94a3b8; line-height:1.8; margin-bottom:10px;">강화의 유관(contingencies of reinforcement)을 파악하기 위해 면밀한 평가 실시:</p>
+        <ul style="font-size:13.5px; color:#a8b8cc; padding-left:16px; line-height:1.8;">
+          <li>수정할 행동의 <strong>빈도</strong> 측정</li>
+          <li>행동 이전: <strong>선행사건(Antecedent)</strong></li>
+          <li>행동 이후: <strong>결과(Consequence)</strong></li>
+          <li>평가 방법: <strong>관찰, 면담, 질문지</strong></li>
+        </ul>
+      </div>
+      <div>
+        <div class="cc c-em" style="padding:14px; height:100%;">
+          <h3>📋 목표 설정</h3>
+          <p>평가 결과 바탕으로 구체적 목표 설정<br><br>
+          <strong>증가</strong>되어야 할 행동 결정<br>
+          <strong>감소</strong>되어야 할 행동 결정</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(251,191,36,.3); margin-top:14px;">
+    <div class="card-title" style="color:var(--amber)"><span class="dot" style="background:var(--amber)"></span>프리맥 원리 (Premack Principle) <span class="badge badge-am">단답형</span></div>
+    <div class="kp kp-am" style="margin-bottom:0;">
+      <span class="kp-icon">💡</span>
+      <div class="kp-body">
+        <strong>정의:</strong> 어떤 사람이 더 자주 하고 싶어 하는 행동(<strong>고확률 행동</strong>)을, 덜 하고 싶어 하는 행동(<strong>저확률 행동</strong>)의 <strong>강화물(reinforcer)</strong>로 사용하는 것<br><br>
+        <strong>예:</strong> "숙제(저확률)를 끝내면 게임(고확률)을 할 수 있어" → 고확률 행동(게임)이 저확률 행동(숙제)을 강화
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(56,189,248,.3);">
+    <div class="card-title" style="color:var(--sky)"><span class="dot" style="background:var(--sky)"></span>아동·청소년 치료 기법 3가지 <span class="badge badge-red">전부 암기</span></div>
+    <div class="grid3" style="margin-top:4px;">
+      <div class="cc c-sk" style="padding:14px;">
+        <h3>🪜 조형(Shaping)</h3>
+        <p>작은 단계로 나누어 변화를 <strong>점진적으로 강화</strong>함<br><br>
+        목표 행동에 가까워질수록 순차적으로 강화</p>
+      </div>
+      <div class="cc c-ind" style="padding:14px;">
+        <h3>🎫 토큰 경제(Token Economy)</h3>
+        <p>점수·토큰을 주고, <strong>보상과 교환</strong>하게 함<br><br>
+        행동 발생 시 즉각 토큰 제공 → 나중에 원하는 보상으로 교환</p>
+      </div>
+      <div class="cc c-em" style="padding:14px;">
+        <h3>📜 유관계약(Contingency Contracting)</h3>
+        <p>"부모는 아이의 행동 변화가 나타나면 <strong>보상을 약속</strong>한다"는 계약<br><br>
+        예: "Johnny가 5일간 상기 없이 숙제 완료 → 토요일 동물원"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S10: 부부치료 -->
+<section id="s10">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,146,60,.15);">💑</div>
+    <div class="section-title">행동주의 부부치료 <span>기법 3가지 정확히</span></div>
+  </div>
+
+  <div class="card" style="border-color:rgba(251,146,60,.3);">
+    <div class="card-title" style="color:var(--orange)"><span class="dot" style="background:var(--orange)"></span>부부치료의 핵심 전제</div>
+    <div class="grid2">
+      <div class="cc c-or" style="padding:14px;">
+        <h3>📏 평가</h3>
+        <p>표준화된 척도(예: 결혼만족도 척도)와 면담을 사용해 관계의 <strong>강점과 약점</strong>을 평가</p>
+      </div>
+      <div class="cc c-am" style="padding:14px;">
+        <h3>🤝 상호 책임·변화 가능성</h3>
+        <p>한쪽만이 아니라 <strong>두 사람이 함께</strong> 변화를 위해 노력해야 한다는 전제.<br>
+        상호 책임(mutual responsibility) 강조</p>
+      </div>
+    </div>
+    <div class="kp kp-am" style="margin-top:12px; margin-bottom:0;">
+      <span class="kp-icon">💡</span>
+      <div class="kp-body">
+        <strong>행동 교환(Behavior Exchange):</strong> 현재 감정이 어떻든 간에 <strong>의도적으로 긍정적 행동을 늘리면</strong>, 시간이 지나면서 긍정적 감정도 뒤따라 증가한다고 봄.<br>
+        → 각자 상대방이 더 자주 해주길 원하는 행동 3가지 목록 작성 → 상호교환계약
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(52,211,153,.3);">
+    <div class="card-title" style="color:var(--emerald)"><span class="dot" style="background:var(--emerald)"></span>부부치료 기법 3가지 <span class="badge badge-red">전부 암기</span></div>
+    <div class="grid3" style="margin-top:4px;">
+      <div class="cc c-em" style="padding:14px;">
+        <h3>🔄 상호교환 계약<br>(Quid Pro Quo)</h3>
+        <p>한 배우자가 특정 행동을 약속하는 대신, 다른 배우자도 특정 행동을 약속하는 방식<br><br>
+        <strong>공정성과 상호성</strong>을 높임</p>
+      </div>
+      <div class="cc c-sk" style="padding:14px;">
+        <h3>⚡ 갈등 다루기<br>(Conflict Engagement)</h3>
+        <p>갈등을 <strong>회피하기보다 건설적으로 다루도록</strong> 돕는 부부교육의 한 방법</p>
+      </div>
+      <div class="cc c-ind" style="padding:14px;">
+        <h3>🛠️ 문제해결 훈련<br>(Problem-solving Training)</h3>
+        <p>감정적으로 즉각 반응 ✗<br><br>
+        ① 문제 확인 → ② 해결책 브레인스토밍 → ③ 실행 계획 합의<br>
+        <strong>구조화된 방법</strong> 학습</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 부모훈련 기법 vs 부부치료 기법 혼동 주의:</strong><br>
+    • 부모훈련: <strong>조형, 토큰 경제, 유관계약, 프리맥 원리</strong><br>
+    • 부부치료: <strong>상호교환 계약(quid pro quo), 갈등 다루기, 문제해결 훈련</strong><br>
+    "유관계약"은 부모훈련 / "상호교환 계약(quid pro quo)"은 부부치료 — 헷갈리지 말 것!
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S11: 퀴즈 -->
+<section id="s11">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,.15);">📝</div>
+    <div class="section-title">실전 연습 퀴즈 <span>정답 클릭으로 확인</span></div>
+  </div>
+
+  <div class="warn">각 문제를 먼저 혼자 풀어본 후 <strong>답 보기</strong> 버튼을 누르세요.</div>
+
+  <div class="quiz-item" id="q1">
+    <div class="quiz-q">Q1. 조작적 조건형성에 관한 설명으로 <strong>옳지 않은 것</strong>은?<br>
+      ① 정적 강화는 쾌자극을 더해 행동을 증가시킨다.<br>
+      ② 부적 강화는 혐오 자극을 제거하여 행동을 감소시킨다.<br>
+      ③ 부적 처벌(반응대가)은 쾌자극을 제거하여 행동을 감소시킨다.<br>
+      ④ 강화되던 행동이 더 이상 강화되지 않으면 소거가 일어난다.
+    </div>
+    <button class="btn-reveal" onclick="toggle('q1')">답 보기</button>
+    <div class="quiz-a">✅ 정답: <strong>②</strong><br>
+      부적 강화는 혐오 자극을 제거하여 행동을 <strong>증가·유지</strong>시킴.<br>
+      "감소"가 아님! 부적 강화는 강화이므로 행동이 증가함.<br>
+      예: 숙제하면 잔소리 그만 → 숙제 행동이 증가함.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q2">
+    <div class="quiz-q">Q2. Ellis의 ABC 모형에서 각 알파벳이 의미하는 것을 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q2')">답 보기</button>
+    <div class="quiz-a">
+      <strong>A</strong> = 선행사건(Activating Event): 강한 정서적 반응을 유발하는 사건이나 상황<br>
+      <strong>B</strong> = 신념(Beliefs): 선행사건에 대해 개인이 갖는 믿음·해석·평가<br>
+      <strong>C</strong> = 결과(Consequences): 신념으로 인해 나타나는 정서적·행동적 결과<br><br>
+      핵심: A가 C를 직접 결정하는 것이 아니라, <strong>B(신념)가 C를 결정</strong>함.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q3">
+    <div class="quiz-q">Q3. 다음에서 설명하는 인지왜곡의 유형은?<br><br>
+      <em>"항상 실패만 하는 나는 평생 아무것도 제대로 할 수 없어"<br>(한 번의 실패 경험을 모든 상황에 적용)</em>
+    </div>
+    <button class="btn-reveal" onclick="toggle('q3')">답 보기</button>
+    <div class="quiz-a">✅ <strong>과잉 일반화(Overgeneralization)</strong><br>
+      한두 번의 사건을 근거로 모든 상황에 광범위한 결론을 내리는 것.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q4">
+    <div class="quiz-q">Q4. 프리맥 원리(Premack Principle)를 설명하고, 예를 드시오.</div>
+    <button class="btn-reveal" onclick="toggle('q4')">답 보기</button>
+    <div class="quiz-a">
+      <strong>정의:</strong> 더 자주 하고 싶어 하는 행동(고확률 행동)을, 덜 하고 싶어 하는 행동(저확률 행동)의 <strong>강화물(reinforcer)</strong>로 사용하는 원리<br><br>
+      <strong>예:</strong> "숙제(저확률 행동)를 다 하면 게임(고확률 행동)을 30분 할 수 있다" → 고확률 행동(게임)이 저확률 행동(숙제)을 강화함.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q5">
+    <div class="quiz-q">Q5. 다음 중 행동주의 <strong>부모훈련</strong>의 기법이 <strong>아닌 것</strong>은?<br>
+      ① 조형(Shaping)<br>
+      ② 토큰 경제(Token Economy)<br>
+      ③ 유관계약(Contingency Contracting)<br>
+      ④ 상호교환 계약(Quid Pro Quo Contracts)
+    </div>
+    <button class="btn-reveal" onclick="toggle('q5')">답 보기</button>
+    <div class="quiz-a">✅ 정답: <strong>④</strong><br>
+      상호교환 계약(Quid Pro Quo)은 <strong>행동주의 부부치료</strong>의 기법.<br>
+      부모훈련 기법: 조형, 토큰 경제, 유관계약 (프리맥 원리 포함)
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q6">
+    <div class="quiz-q">Q6. 아래 상황에서 사용된 조작적 조건형성의 원리는?<br><br>
+      <em>아이가 숙제를 하기 싫어서 울고 떼를 쓰자, 부모가 "그만 울어, 오늘은 그냥 쉬어"라며 숙제를 면제해 주었다. 이후 아이는 숙제를 피하기 위해 떼쓰는 행동이 더 잦아졌다.</em>
+    </div>
+    <button class="btn-reveal" onclick="toggle('q6')">답 보기</button>
+    <div class="quiz-a">✅ <strong>부적 강화(Negative Reinforcement)</strong><br>
+      아이에게 싫은 자극(숙제)이 제거되어 떼쓰기 행동이 <strong>증가</strong>함.<br>
+      → 부정적 행동(떼쓰기)을 의도치 않게 강화한 사례.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q7">
+    <div class="quiz-q">Q7. 인지왜곡 8가지를 모두 쓰시오. (단답형)</div>
+    <button class="btn-reveal" onclick="toggle('q7')">답 보기</button>
+    <div class="quiz-a">
+      ① 임의적 추론(Arbitrary inference)<br>
+      ② 선택적 추상(Selective abstraction)<br>
+      ③ 과잉 일반화(Overgeneralization)<br>
+      ④ 확대와 축소(Magnification and minimization)<br>
+      ⑤ 개인화(Personalization)<br>
+      ⑥ 이분법적 사고(Dichotomous thinking) — 흑백논리<br>
+      ⑦ 낙인찍기(Labeling)와 오표상(Mislabeling)<br>
+      ⑧ 독심술 / 마음 읽기(Mind reading)
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q8">
+    <div class="quiz-q">Q8. 행동주의 부부치료의 기법 3가지를 쓰고, 각각의 특징을 설명하시오.</div>
+    <button class="btn-reveal" onclick="toggle('q8')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>상호교환 계약(Quid Pro Quo Contracts)</strong>: 한 배우자가 특정 행동을 약속하는 대신, 다른 배우자도 특정 행동을 약속 → 공정성·상호성 증진<br><br>
+      ② <strong>갈등 다루기(Conflict Engagement)</strong>: 갈등을 회피하지 않고 건설적으로 다루도록 돕는 부부교육 방법<br><br>
+      ③ <strong>문제해결 훈련(Problem-solving Training)</strong>: 감정적 즉각 반응 대신, 문제 확인 → 해결책 브레인스토밍 → 실행 계획 합의의 구조화된 방법 학습
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q9">
+    <div class="quiz-q">Q9. 행동주의 관점에서 증상을 보는 시각은 정신역동 관점과 어떻게 다른가?</div>
+    <button class="btn-reveal" onclick="toggle('q9')">답 보기</button>
+    <div class="quiz-a">
+      <strong>행동주의:</strong> 증상에 어떤 깊은 상징적 의미가 있다고 보지 않음. 증상 그 자체를 다루며, 특히 <strong>그 증상을 강화하고 유지시키는 환경(가족 구성원)의 반응</strong>에 초점을 둠. 증상 = 조작적 조건형성에 의해 학습된 반응.<br><br>
+      <strong>정신역동:</strong> 증상에는 무의식적·상징적 의미가 있으며, 과거 경험과 내면의 갈등이 증상으로 표현된다고 봄.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q10">
+    <div class="quiz-q">Q10. 사회교환이론(Social Exchange Theory)의 핵심 주장은?</div>
+    <button class="btn-reveal" onclick="toggle('q10')">답 보기</button>
+    <div class="quiz-a">
+      사람들은 관계 속에서 <strong>보상(rewards)은 최대화</strong>하고 <strong>비용(costs)은 최소화</strong>하려고 노력함.<br><br>
+      행동은 더 큰 보상을 주는 결과가 도입되기 전까지는 <strong>변화에 저항적</strong>으로 유지됨.<br><br>
+      건강한 가족관계: 보상적 상호작용이 많고 비용(부정적 상호작용)이 낮은 균형 상태.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL SUMMARY -->
+<section style="padding:40px 0;">
+  <div class="summary-box">
+    <h3>🎓 기말고사 최종 암기 포인트 12가지</h3>
+    <ol>
+      <li>인지행동가족치료: 처음엔 <strong>행동주의(학습이론)</strong> 기반 → 이후 <strong>인지이론 통합</strong> (1980년대 후반)</li>
+      <li><strong>고전적 조건형성</strong>(파블로프): US→UR, CS→CR / <strong>체계적 둔감법</strong>은 월피</li>
+      <li>조작적 조건형성 4분면: <strong>정적강화(쾌↑) / 정적처벌(혐↑) / 부적강화(혐↓→행동↑) / 부적처벌(쾌↓)</strong></li>
+      <li><strong>부적 강화 ≠ 처벌!</strong> 부적 강화는 행동을 증가시킴</li>
+      <li>벡 = <strong>인지적 매개 모형</strong> / 엘리스 = <strong>ABC 모형</strong></li>
+      <li><strong>ABC</strong>: A(선행사건) → B(신념·해석) → C(결과) — B가 C를 결정함</li>
+      <li><strong>인지왜곡 8가지</strong> 전부: 임의추론·선택추상·과잉일반화·확대축소·개인화·이분법·낙인찍기·독심술</li>
+      <li><strong>역기능적 도식</strong>: 자기·타인·관계에 대한 왜곡되고 경직된 신념 체계 — 원가족 경험에서 비롯</li>
+      <li><strong>프리맥 원리</strong>: 고확률 행동(원하는 것)이 저확률 행동(싫어하는 것)의 강화물</li>
+      <li>부모훈련 기법: <strong>조형·토큰 경제·유관계약</strong></li>
+      <li>부부치료 기법: <strong>상호교환 계약(quid pro quo)·갈등 다루기·문제해결 훈련</strong></li>
+      <li><strong>행동 교환</strong>: 감정이 어떻든 긍정적 행동 먼저 늘리면 → 긍정적 감정도 뒤따름</li>
+    </ol>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  const btn = el.querySelector('.btn-reveal');
+  btn.textContent = el.classList.contains('open') ? '답 숨기기' : '답 보기';
+}
+</script>
+</body>
+</html>
