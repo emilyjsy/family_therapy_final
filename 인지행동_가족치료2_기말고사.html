@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인지행동 가족치료 2 — 기말고사 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b27;
+    --card: #1c2235;
+    --border: #262d45;
+    --indigo: #818cf8;
+    --indigo-dim: rgba(129,140,248,0.12);
+    --emerald: #34d399;
+    --emerald-dim: rgba(52,211,153,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --rose: #fb7185;
+    --rose-dim: rgba(251,113,133,0.12);
+    --sky: #38bdf8;
+    --sky-dim: rgba(56,189,248,0.12);
+    --orange: #fb923c;
+    --orange-dim: rgba(251,146,60,0.12);
+    --violet: #a78bfa;
+    --violet-dim: rgba(167,139,250,0.12);
+    --text: #e2e8f0;
+    --muted: #8892a8;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.75; padding-bottom: 80px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #0d1117 0%, #1a1630 55%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 44px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(167,139,250,0.1) 0%, transparent 70%); }
+  .hero-label { font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:var(--violet); font-weight:500; margin-bottom:14px; }
+  .hero h1 { font-family:var(--serif); font-size:clamp(24px,5vw,42px); font-weight:700; color:#fff; line-height:1.25; margin-bottom:12px; }
+  .hero h1 span { color:var(--violet); }
+  .hero-sub { color:var(--muted); font-size:14px; max-width:500px; margin:0 auto 24px; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .tag { background:var(--violet-dim); border:1px solid rgba(167,139,250,0.3); color:var(--violet); font-size:12px; padding:4px 12px; border-radius:100px; font-weight:500; }
+
+  /* NAV */
+  .nav-wrap { position:sticky; top:0; z-index:100; background:rgba(13,17,23,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 16px; overflow-x:auto; }
+  .nav { display:flex; white-space:nowrap; max-width:960px; margin:0 auto; }
+  .nav a { display:block; padding:13px 14px; color:var(--muted); font-size:12.5px; font-weight:500; text-decoration:none; border-bottom:2px solid transparent; transition:all .2s; }
+  .nav a:hover { color:var(--violet); border-color:var(--violet); }
+
+  /* LAYOUT */
+  .container { max-width:960px; margin:0 auto; padding:0 16px; }
+  section { padding:48px 0 0; }
+  .section-header { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+  .section-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+  .section-title { font-family:var(--serif); font-size:19px; font-weight:700; color:#fff; }
+  .section-title span { font-size:13px; font-weight:400; color:var(--muted); margin-left:8px; font-family:var(--sans); }
+
+  /* CARD */
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:14px; }
+  .card-title { font-size:14.5px; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+  /* GRID */
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+  @media(max-width:620px) { .grid2,.grid3 { grid-template-columns:1fr; } }
+
+  /* CONCEPT CARD */
+  .cc { border-radius:10px; padding:16px 18px; border:1px solid; }
+  .cc h3 { font-size:13.5px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+  .cc p, .cc li { font-size:13px; line-height:1.75; color:#a8b8cc; }
+  .cc ul { padding-left:16px; }
+  .c-vi { border-color:rgba(167,139,250,.35); background:var(--violet-dim); }
+  .c-vi h3 { color:var(--violet); }
+  .c-em { border-color:rgba(52,211,153,.35); background:var(--emerald-dim); }
+  .c-em h3 { color:var(--emerald); }
+  .c-am { border-color:rgba(251,191,36,.35); background:var(--amber-dim); }
+  .c-am h3 { color:var(--amber); }
+  .c-ro { border-color:rgba(251,113,133,.35); background:var(--rose-dim); }
+  .c-ro h3 { color:var(--rose); }
+  .c-sk { border-color:rgba(56,189,248,.35); background:var(--sky-dim); }
+  .c-sk h3 { color:var(--sky); }
+  .c-or { border-color:rgba(251,146,60,.35); background:var(--orange-dim); }
+  .c-or h3 { color:var(--orange); }
+  .c-ind { border-color:rgba(129,140,248,.35); background:var(--indigo-dim); }
+  .c-ind h3 { color:var(--indigo); }
+
+  /* KEY POINT */
+  .kp { display:flex; gap:12px; align-items:flex-start; padding:14px 18px; border-radius:10px; margin-bottom:12px; border-left:3px solid; }
+  .kp-icon { font-size:17px; flex-shrink:0; margin-top:2px; }
+  .kp-body { font-size:13.5px; line-height:1.75; color:#c0cfdf; }
+  .kp-body strong { font-weight:700; }
+  .kp-vi { background:var(--violet-dim); border-color:var(--violet); }
+  .kp-am { background:var(--amber-dim); border-color:var(--amber); }
+  .kp-ro { background:var(--rose-dim); border-color:var(--rose); }
+  .kp-em { background:var(--emerald-dim); border-color:var(--emerald); }
+  .kp-sk { background:var(--sky-dim); border-color:var(--sky); }
+
+  /* WARN */
+  .warn { background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.35); border-radius:10px; padding:14px 18px; font-size:13.5px; color:#dfc87a; margin-bottom:14px; line-height:1.75; }
+  .warn strong { color:var(--amber); }
+
+  /* STEPS */
+  .steps { display:flex; flex-direction:column; gap:0; }
+  .step { display:flex; gap:0; align-items:stretch; }
+  .step-left { display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0; }
+  .step-num { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
+  .step-line { width:2px; flex:1; min-height:8px; }
+  .step-body { padding:0 0 18px 12px; flex:1; }
+  .step-title { font-size:14px; font-weight:700; margin-bottom:4px; }
+  .step-desc { font-size:13px; color:#94a3b8; line-height:1.7; }
+
+  /* THOUGHT RECORD TABLE */
+  .tr-table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .tr-table th { padding:10px 12px; text-align:left; font-weight:700; font-size:12px; border:1px solid var(--border); background:var(--surface); color:var(--violet); line-height:1.5; }
+  .tr-table td { padding:10px 12px; border:1px solid var(--border); vertical-align:top; color:#a8b8cc; line-height:1.65; font-size:12.5px; }
+  .tr-table .example-row td { background:rgba(167,139,250,.05); }
+
+  /* COMPARE TABLE */
+  .cmp-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .cmp-table th { padding:11px 14px; text-align:left; font-weight:700; font-size:13px; background:var(--surface); }
+  .cmp-table td { padding:10px 14px; border-top:1px solid var(--border); vertical-align:top; color:#a8b8cc; line-height:1.7; }
+  .cmp-table td:first-child { color:var(--amber); font-weight:600; font-size:13px; width:120px; }
+
+  /* ACCORDION */
+  details { background:var(--card); border:1px solid var(--border); border-radius:10px; margin-bottom:10px; overflow:hidden; }
+  summary { padding:15px 20px; font-weight:600; font-size:14px; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; user-select:none; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:'＋'; font-size:16px; color:var(--muted); flex-shrink:0; }
+  details[open] summary::after { content:'－'; }
+  .db { padding:0 20px 16px; font-size:13.5px; color:#a8b8cc; line-height:1.8; border-top:1px solid var(--border); padding-top:14px; }
+  .db ul { padding-left:18px; }
+  .db li { margin-bottom:6px; }
+  .db strong { color:var(--text); font-weight:600; }
+
+  /* QUIZ */
+  .quiz-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:10px; }
+  .quiz-q { font-size:14px; font-weight:600; margin-bottom:10px; color:var(--text); line-height:1.7; }
+  .quiz-a { background:var(--violet-dim); border:1px solid rgba(167,139,250,.25); border-radius:6px; padding:10px 14px; font-size:13.5px; color:#c0b0f0; display:none; line-height:1.8; }
+  .quiz-item.open .quiz-a { display:block; }
+  .btn-reveal { background:none; border:1px solid var(--border); color:var(--muted); font-size:12px; padding:5px 12px; border-radius:6px; cursor:pointer; margin-top:6px; transition:all .2s; font-family:var(--sans); }
+  .btn-reveal:hover { border-color:var(--violet); color:var(--violet); }
+
+  /* SPEAKER / LISTENER LISTS */
+  .role-box { border-radius:10px; padding:18px 20px; border:1px solid; }
+  .role-box h3 { font-size:14px; font-weight:700; margin-bottom:12px; }
+  .role-box ul { padding-left:0; list-style:none; }
+  .role-box li { font-size:13px; color:#a8b8cc; line-height:1.75; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.05); display:flex; gap:8px; }
+  .role-box li:last-child { border-bottom:none; }
+  .role-box li::before { content:'›'; flex-shrink:0; font-weight:700; }
+
+  /* SUMMARY */
+  .summary-box { background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(52,211,153,.08)); border:1px solid rgba(167,139,250,.25); border-radius:14px; padding:26px 26px; margin-top:8px; }
+  .summary-box h3 { font-family:var(--serif); font-size:16px; font-weight:700; color:var(--violet); margin-bottom:14px; }
+  .summary-box ol { padding-left:20px; }
+  .summary-box li { margin-bottom:9px; font-size:14px; color:#c0d0e0; line-height:1.75; }
+  .summary-box li strong { color:var(--amber); }
+
+  .divider { height:1px; background:var(--border); margin:40px 0 0; }
+  .badge { display:inline-block; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  .badge-red { background:var(--rose-dim); color:var(--rose); border:1px solid rgba(251,113,133,.3); }
+  .badge-am { background:var(--amber-dim); color:var(--amber); border:1px solid rgba(251,191,36,.3); }
+  .badge-vi { background:var(--violet-dim); color:var(--violet); border:1px solid rgba(167,139,250,.3); }
+
+  /* inline highlight */
+  .hl { background:rgba(251,191,36,.15); color:var(--amber); padding:1px 5px; border-radius:3px; font-weight:600; font-size:0.95em; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Cognitive-Behavioral Family Therapy · 9장 2부</div>
+  <h1>인지행동<span>가족치료 심화</span><br>기말고사 완전정복</h1>
+  <p class="hero-sub">자동적사고 · 하향화살표 · 소크라테스질문 · 문제해결5단계 · 공감적의사소통 — 단답형 완벽 대비</p>
+  <div class="tags">
+    <span class="tag">행동치료 vs CBFT</span>
+    <span class="tag">자동적 사고 기록지</span>
+    <span class="tag">하향 화살표 기법</span>
+    <span class="tag">소크라테스식 질문</span>
+    <span class="tag">문제해결 5단계</span>
+    <span class="tag">공감적 의사소통</span>
+    <span class="tag">도식 수정</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#s1">①행동치료vs인지행동</a>
+    <a href="#s2">②평가</a>
+    <a href="#s3">③자동적사고기록지</a>
+    <a href="#s4">④하향화살표</a>
+    <a href="#s5">⑤도식수정</a>
+    <a href="#s6">⑥소크라테스질문</a>
+    <a href="#s7">⑦행동변화개입</a>
+    <a href="#s8">⑧문제해결5단계</a>
+    <a href="#s9">⑨공감적의사소통</a>
+    <a href="#s10">⑩퀴즈</a>
+  </nav>
+</div>
+
+<div class="container">
+
+<!-- S1: 행동치료 vs 인지행동 -->
+<section id="s1">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(167,139,250,.15);">⚖️</div>
+    <div class="section-title">행동치료 vs 인지행동가족치료 <span>단답형 단골 비교</span></div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th style="color:var(--muted); width:120px;">구분</th>
+          <th style="color:var(--sky);">🔷 행동치료 (BT)</th>
+          <th style="color:var(--violet);">🔶 인지행동가족치료 (CBFT)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이론 기반</td>
+          <td>고전적·조작적 조건형성 + 사회학습이론 + 사회교환이론</td>
+          <td>위의 행동이론 <strong>+ Ellis·Beck 계열 인지이론</strong><br>(irrational beliefs, schemas, automatic thoughts 등)</td>
+        </tr>
+        <tr>
+          <td>핵심 전제</td>
+          <td>"행동은 결과에 의해 유지됨"<br>강화·벌·무시가 행동을 늘리거나 줄임</td>
+          <td>감정과 행동은 특정 <strong>인지(신념, 귀인, 기대)에 의해 매개</strong>됨</td>
+        </tr>
+        <tr>
+          <td>문제 이해</td>
+          <td>관찰 가능한 행동 + 그 행동 전후의 <strong>강화 조건</strong><br>가족 내 보상·벌의 교환 패턴</td>
+          <td>왜곡된 자동적 사고 + 가족 schema + <strong>교환 패턴이 서로 물려 돌아가는 결과</strong></td>
+        </tr>
+        <tr>
+          <td>주요 관심</td>
+          <td>"어떻게 행동이 강화되고 있는가?"</td>
+          <td>표적 행동 + <strong>그 행동을 지지하는 신념·규칙</strong><br>인지적 왜곡 + 가족 스키마를 함께 다룸</td>
+        </tr>
+        <tr>
+          <td>초점 방향</td>
+          <td>"왜 저런 생각을 하게 되었나?"보다 행동 강화에 초점</td>
+          <td>행동 + <strong>그 이면의 인지 모두</strong> 다룸</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 핵심 구별 포인트:</strong><br>
+    행동치료: <strong>행동 + 강화 조건</strong>에 집중. 인지는 부차적.<br>
+    인지행동치료: <strong>행동 + 인지(신념·스키마·자동적 사고)</strong> 모두. 특히 <strong>"인지가 감정·행동을 매개한다"</strong>는 것이 핵심.<br>
+    CBFT에서 가족 갈등 = 왜곡된 자동적 사고 + 가족 schema + 교환 패턴의 <strong>복합 결과</strong>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S2: 평가 -->
+<section id="s2">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(56,189,248,.15);">🔍</div>
+    <div class="section-title">인지행동가족치료: 평가(Assessment) <span>행동치료에 인지 추가</span></div>
+  </div>
+
+  <div class="kp kp-vi">
+    <span class="kp-icon">💡</span>
+    <div class="kp-body">
+      <strong>CBFT 평가 = 행동치료의 행동·강화 분석 + 아래 인지적 요소 추가</strong>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="cc c-vi">
+      <h3>💭 자동적 사고 & 핵심신념</h3>
+      <p>각 가족 구성원의 <strong>자동적 사고, 핵심신념, schema</strong> 파악</p>
+    </div>
+    <div class="cc c-am">
+      <h3>🏠 가족 도식</h3>
+      <p>가족에 대한 개인적 이론<br><strong>"가족이란 ~해야 한다"</strong>는 믿음 파악</p>
+    </div>
+    <div class="cc c-ro">
+      <h3>🌀 인지적 왜곡 유형</h3>
+      <p>임의적 추론, 선택적 추상화, mind reading 등 <strong>왜곡의 패턴</strong> 파악</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(52,211,153,.3);">
+    <div class="card-title" style="color:var(--emerald)"><span class="dot" style="background:var(--emerald)"></span>원가족 도식 탐색의 중요성</div>
+    <div class="kp kp-em" style="margin-bottom:0;">
+      <span class="kp-icon">🌱</span>
+      <div class="kp-body">
+        관계 안에서 <strong>정서와 애정 표현에 대한 기본 신념(도식)이 원가족에서 어떻게 형성되었는지</strong> 파악<br>
+        → 부부가 서로의 역사를 경청하고 각자의 도식 형성 배경을 <strong>이해하게 도움</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px;">
+    <div class="cc c-sk">
+      <h3>📋 구조화된 측정</h3>
+      <ul>
+        <li>인지적 오류를 설명한 <strong>체크리스트</strong></li>
+        <li><strong>"사고 기록지"</strong> 활용</li>
+        <li>자동적 사고와 인지적 오류에 대한 교육</li>
+        <li>자동적 사고 기록 <strong>숙제</strong> 부여</li>
+      </ul>
+    </div>
+    <div class="cc c-or">
+      <h3>💬 비구조화된 측정</h3>
+      <ul>
+        <li>상담 과정 중에 <strong>자연스럽게 탐색하고 파악</strong></li>
+        <li>대화를 통해 신념과 왜곡 패턴을 발견</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S3: 자동적 사고 기록지 -->
+<section id="s3">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,113,133,.15);">📝</div>
+    <div class="section-title">자동적 사고 기록지 <span class="badge badge-red">단답형 — 6개 열 전부 암기</span></div>
+  </div>
+
+  <div class="kp kp-ro">
+    <span class="kp-icon">📌</span>
+    <div class="kp-body">
+      <strong>자동적 사고 기록지란?</strong> 기분이 나빠지고 있다고 느낄 때 <strong>"지금 내 머릿속에 무슨 생각이 스쳐 지나가지?"</strong>를 빠르게 적는 구조화된 도구.
+    </div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;">
+    <div class="card-title" style="color:var(--rose)"><span class="dot" style="background:var(--rose)"></span>사고 기록지 6개 열 — 순서와 내용 완전 암기</div>
+    <table class="tr-table">
+      <thead>
+        <tr>
+          <th>① 상황</th>
+          <th>② 자동적 사고</th>
+          <th>③ 감정</th>
+          <th>④ 왜곡</th>
+          <th>⑤ 대안적 사고/반응</th>
+          <th>⑥ 결과</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>불쾌한 감정으로 이끈 <strong>사건, 일련의 생각, 상상, 회상</strong></td>
+          <td>감정이 일어나기 전에 나타난 <strong>자동적 사고</strong> 적기<br>(확신 수준 <strong>0–100%</strong>)</td>
+          <td><strong>구체적 감정</strong> 적기<br>감정 정도 <strong>(%)</strong></td>
+          <td>이분법적 사고, 과잉 일반화, labeling 등 <strong>왜곡 유형</strong></td>
+          <td>자동적 사고에 대한 <strong>합리적/대안적 반응</strong> 적기<br>확신 수준 <strong>(%)</strong></td>
+          <td>자동적 사고 확신 <strong>재평가(%)</strong><br>감정 적고 정도 <strong>(%)</strong></td>
+        </tr>
+        <tr class="example-row">
+          <td style="color:#b0c0d8;"><em>고딩 딸이 방에서 문 닫고 이어폰 끼고 휴대폰 봄. "밥 먹으라"고 두 번 부르자, "알았다고!"라고 짜증 섞인 톤으로 말함</em></td>
+          <td style="color:#b0c0d8;"><em>"요즘 얘가 날 무시하네. 내가 하인이냐, 밥해줘도 고마움을 몰라, 이렇게 버릇없이 크면 앞으로 큰일난다" 90%</em></td>
+          <td style="color:#b0c0d8;"><em>분노, 억울함, 무시당한 느낌, 두려움 90%</em></td>
+          <td style="color:#b0c0d8; color:var(--rose);"><em>임의적 추론, 과잉 일반화, 독심술 등</em></td>
+          <td style="color:#94a3b8;"><em>(빈칸 — 작성 과제)</em></td>
+          <td style="color:#94a3b8;"><em>(빈칸 — 작성 과제)</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 단답형 대비 — 6개 열 순서 암기법:</strong><br>
+    <strong>상 → 자 → 감 → 왜 → 대 → 결</strong><br>
+    상황 / 자동적 사고(확신%) / 감정(%) / 왜곡 유형 / 대안적 사고(확신%) / 결과(확신% 재평가 + 감정%)
+  </div>
+
+  <details>
+    <summary style="color:var(--rose)">📖 위 예시(고딩 딸)에서 어떤 인지왜곡이 나타나고 있나?</summary>
+    <div class="db">
+      <ul>
+        <li><strong>임의적 추론:</strong> "얘가 날 무시하네" — 짜증 섞인 대답 하나만으로 무시라고 결론</li>
+        <li><strong>독심술(Mind Reading):</strong> 딸의 의도를 실제 확인 없이 "무시"로 확신</li>
+        <li><strong>과잉 일반화:</strong> "앞으로 큰일난다" — 현재 행동을 미래 전체로 확장</li>
+        <li><strong>확대:</strong> 짜증 섞인 대답을 "하인 취급"으로 확대 해석</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- S4: 하향 화살표 기법 -->
+<section id="s4">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,.15);">⬇️</div>
+    <div class="section-title">하향 화살표 기법 <span class="badge badge-red">4단계 순서 단답형</span></div>
+  </div>
+
+  <div class="kp kp-am">
+    <span class="kp-icon">📌</span>
+    <div class="kp-body">
+      <strong>하향 화살표 기법이란?</strong><br>
+      자동적 사고의 이면에 있는 <strong>중간신념과 핵심신념(schema)</strong>을 탐색하는 기법.<br>
+      표면적 생각에서 시작해서 점점 깊이 내려가 핵심 신념 수준까지 도달함.
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(251,191,36,.3);">
+    <div class="card-title" style="color:var(--amber)"><span class="dot" style="background:var(--amber)"></span>하향 화살표 기법 4단계</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(251,191,36,.2); color:var(--amber);">1</div>
+          <div class="step-line" style="background:rgba(251,191,36,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--amber);">자동적 사고 확인</div>
+          <div class="step-desc">문제 상황에서 떠오른 <strong>자동적 사고</strong>를 확인<br>예: "딸이 나를 무시해"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(251,191,36,.2); color:var(--amber);">2</div>
+          <div class="step-line" style="background:rgba(251,191,36,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--amber);">핵심 질문 던지기</div>
+          <div class="step-desc"><strong>"만약 그게 사실이라면, 그게 무엇을 의미하나?"</strong><br>예: "딸이 나를 무시한다면 → 나는 좋은 부모가 아닌 거야"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(251,191,36,.2); color:var(--amber);">3</div>
+          <div class="step-line" style="background:rgba(251,191,36,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--amber);">같은 질문을 반복</div>
+          <div class="step-desc">중간신념(규칙, 가정) 수준에서 <strong>핵심신념(schema)</strong> 수준까지 계속 내려감<br>예: "나는 좋은 부모가 아니야 → 나는 가치 없는 존재야"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(251,191,36,.2); color:var(--amber);">4</div>
+          <div class="step-line" style="display:none;"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--amber);">핵심신념을 현재 패턴과 연결</div>
+          <div class="step-desc">확인된 핵심신념이 <strong>현재의 감정·행동·관계패턴에 어떤 영향</strong>을 주는지 연결해 이해</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 단답형 대비:</strong> "하향 화살표 기법"은 <strong>자동적 사고 → 중간신념 → 핵심신념(schema)</strong>으로 내려가는 기법.<br>
+    핵심 질문: <strong>"만약 그게 사실이라면, 그게 무엇을 의미하나?"</strong> — 이 문장 자체가 출제될 수 있음.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S5: 도식 수정 -->
+<section id="s5">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,211,153,.15);">🔧</div>
+    <div class="section-title">도식 약화·수정 작업 <span>인지 재구조화 포함</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-em">
+      <h3>🔬 도식을 "가설"로 올려놓기</h3>
+      <p>도식(schema)을 절대적 사실이 아닌 <strong>검토 가능한 가설</strong>로 바라보게 함<br>→ 증거를 함께 점검</p>
+    </div>
+    <div class="cc c-am">
+      <h3>⚖️ 이득과 손실 검토</h3>
+      <p>도식에 기반한 <strong>이득과 손실</strong>을 함께 검토함<br>→ 도식이 실제로 나에게 도움이 되는가?</p>
+    </div>
+    <div class="cc c-vi">
+      <h3>🧩 인지 재구조화</h3>
+      <p>새로운, 더 <strong>적응적인 신념</strong>을 함께 구성함<br>→ 기존 도식을 바꾸는 핵심 과정</p>
+    </div>
+    <div class="cc c-sk">
+      <h3>🏃 새 도식 체험화 과제</h3>
+      <p>새 도식을 <strong>행동·경험으로 연습</strong>시키는 과제 설계<br>→ 인지 변화를 행동으로 굳힘</p>
+    </div>
+  </div>
+
+  <div class="kp kp-em" style="margin-top:14px;">
+    <span class="kp-icon">💡</span>
+    <div class="kp-body">
+      도식 수정 4단계: <strong>① 가설로 올려놓기 → ② 이득·손실 검토 → ③ 인지 재구조화(새 신념 구성) → ④ 행동으로 체험화</strong>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S6: 소크라테스식 질문 -->
+<section id="s6">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(129,140,248,.15);">❓</div>
+    <div class="section-title">소크라테스식 질문 <span class="badge badge-red">단답형 — 정의·목적·예시 전부</span></div>
+  </div>
+
+  <div class="kp kp-vi">
+    <span class="kp-icon">📌</span>
+    <div class="kp-body">
+      <strong>정의:</strong> 질문을 통해 내담자가 <strong>자신의 사고를 스스로 검토</strong>하고 새로운 관점을 발견하여, 보다 <strong>현실적이고 적응적인 해석</strong>을 찾도록 돕는 기법.<br>
+      내담자가 자동적 사고를 <strong>사실로 받아들이지 않고, 검토 가능한 가설로 바라보게</strong> 도움.
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(129,140,248,.3);">
+    <div class="card-title" style="color:var(--indigo)"><span class="dot" style="background:var(--indigo)"></span>소크라테스식 질문 5가지 유형 <span class="badge badge-red">전부 암기</span></div>
+    <div style="display:flex; flex-direction:column; gap:8px; margin-top:4px;">
+      <div class="cc c-ind" style="padding:12px 16px;">
+        <h3>① 증거 확인 질문</h3>
+        <p><span class="hl">"그 생각이 사실이라는 증거는 무엇인가요?"</span></p>
+      </div>
+      <div class="cc c-ind" style="padding:12px 16px;">
+        <h3>② 반대 증거 질문</h3>
+        <p><span class="hl">"그 생각과 반대되는 증거는 무엇인가요?"</span></p>
+      </div>
+      <div class="cc c-ind" style="padding:12px 16px;">
+        <h3>③ 대안적 해석 질문</h3>
+        <p><span class="hl">"이 상황을 다르게 해석할 가능성은 없을까요?"</span></p>
+      </div>
+      <div class="cc c-ind" style="padding:12px 16px;">
+        <h3>④ 이득·손해 질문</h3>
+        <p><span class="hl">"당신이 그 신념을 가지고 살아갈 때 삶이나 가족관계에 어떤 이익/손해가 있나요?"</span></p>
+      </div>
+      <div class="cc c-ind" style="padding:12px 16px;">
+        <h3>⑤ 신념 수정 방향 질문</h3>
+        <p><span class="hl">"당신의 신념을 어떻게 수정하면 가족관계와 생활에 더 도움이 될까요?"</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(52,211,153,.3);">
+    <div class="card-title" style="color:var(--emerald)"><span class="dot" style="background:var(--emerald)"></span>소크라테스식 질문의 활용 범위</div>
+    <div class="grid2">
+      <div class="cc c-em" style="padding:13px;">
+        <h3>✅ 활용되는 곳</h3>
+        <ul>
+          <li>인지 재구조화</li>
+          <li>문제 해결</li>
+          <li>정서 조절</li>
+          <li>핵심신념 탐색</li>
+        </ul>
+      </div>
+      <div class="cc c-vi" style="padding:13px;">
+        <h3>🎯 핵심 기능</h3>
+        <p>CBT의 <strong>기초가 되는 기법</strong>.<br>자동적 사고를 <strong>"검토 가능한 가설"</strong>로 전환하는 것이 핵심.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 소크라테스식 질문 vs 하향화살표 기법 혼동 주의:</strong><br>
+    • <strong>소크라테스식 질문</strong>: 사고의 <u>타당성을 검토</u>하도록 돕는 질문 방식. 인지 재구조화의 기초.<br>
+    • <strong>하향화살표 기법</strong>: 자동적 사고에서 핵심신념까지 <u>깊이 파고들어가는</u> 기법. 탐색·발견이 목적.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S7: 행동변화 개입 -->
+<section id="s7">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,146,60,.15);">🔄</div>
+    <div class="section-title">행동변화 개입 <span>행동변화 안내 · 행동계약 · 가족 스트레스 대처</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="cc c-or">
+      <h3>🗣️ 행동변화 안내 (Guided Behavior Change)</h3>
+      <ul>
+        <li>문답이나 부드러운 제안으로 내담자가 <strong>스스로 행동 변화를 고안하고 실행</strong>하도록 도움</li>
+        <li>"이제 서로의 욕구를 이해했다면, <strong>두 분 모두의 욕구를 충족시키기 위해 어떻게 행동하면 좋을까요?</strong>"</li>
+        <li>"긍정적 행동 증가, 부정적 행동 줄이기"</li>
+        <li>심리교육도 제공 (예: 친밀감을 높이는 대화법)</li>
+      </ul>
+    </div>
+    <div class="cc c-am">
+      <h3>📜 행동 계약</h3>
+      <ul>
+        <li>변화해야 할 행동을 계약 형태로 명문화</li>
+        <li>구체적이고 관찰 가능한 행동 목표 설정</li>
+        <li>9장 1부의 <strong>유관계약(부모훈련)</strong>, <strong>상호교환계약(부부치료)</strong>과 연결</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px; border-color:rgba(56,189,248,.3);">
+    <div class="card-title" style="color:var(--sky)"><span class="dot" style="background:var(--sky)"></span>가족 스트레스와 대처</div>
+    <div class="grid3" style="margin-top:4px;">
+      <div class="cc c-sk" style="padding:13px;">
+        <h3>🎯 목표</h3>
+        <p>가족이 적절한 자원과 대처 기술을 활용하여 <strong>효과적으로 스트레스원에 반응</strong>하도록 도움</p>
+      </div>
+      <div class="cc c-sk" style="padding:13px;">
+        <h3>👤 개인 스트레스 시</h3>
+        <p>가족 구성원 <strong>한 명</strong>이 스트레스 상황일 때 다른 가족이 <strong>사회적 지지 제공</strong></p>
+      </div>
+      <div class="cc c-sk" style="padding:13px;">
+        <h3>👨‍👩‍👧 가족 전체 스트레스 시</h3>
+        <p>가족 전체가 스트레스 상황일 때 <strong>공동으로 대처</strong><br>비효과적인 공동대처 방식도 다룸</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S8: 문제해결 5단계 -->
+<section id="s8">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,211,153,.15);">🛠️</div>
+    <div class="section-title">문제해결 대화 5단계 <span class="badge badge-red">순서 단답형 단골</span></div>
+  </div>
+
+  <div class="kp kp-em">
+    <span class="kp-icon">📌</span>
+    <div class="kp-body">
+      <strong>출처:</strong> Epstein &amp; Baucom (2002); Epstein &amp; Falconier (2024)<br>
+      문제해결 대화 방법을 <strong>단계별로 교육</strong>함 — 5단계 순서 전부 암기!
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(52,211,153,.3);">
+    <div class="steps">
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(52,211,153,.2); color:var(--emerald);">1</div>
+          <div class="step-line" style="background:rgba(52,211,153,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--emerald);">문제 정의하기</div>
+          <div class="step-desc">무엇이 문제인지 <strong>명확하게 정의</strong>. 모호한 갈등을 구체적 문제로 바꿈.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(52,211,153,.2); color:var(--emerald);">2</div>
+          <div class="step-line" style="background:rgba(52,211,153,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--emerald);">이슈의 중요성과 자신의 욕구 명확하게 하기</div>
+          <div class="step-desc">각자에게 이 문제가 왜 중요한지, <strong>자신의 욕구가 무엇인지</strong> 명확히 함.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(52,211,153,.2); color:var(--emerald);">3</div>
+          <div class="step-line" style="background:rgba(52,211,153,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--emerald);">가능한 해결책들 제안하고 논의하기</div>
+          <div class="step-desc">다양한 해결책을 <strong>브레인스토밍</strong>하고 함께 논의. 판단 보류.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(52,211,153,.2); color:var(--emerald);">4</div>
+          <div class="step-line" style="background:rgba(52,211,153,.3);"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--emerald);">해결책 결정</div>
+          <div class="step-desc">논의한 해결책 중 <strong>합의하여 하나를 결정</strong>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num" style="background:rgba(52,211,153,.2); color:var(--emerald);">5</div>
+          <div class="step-line" style="display:none;"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title" style="color:var(--emerald);">시험 기간 설정 및 수정</div>
+          <div class="step-desc">결정한 해결책을 <strong>일정 기간 시험적으로 적용</strong>하고, 효과에 따라 수정.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 단답형 암기법:</strong> <strong>정의 → 욕구 → 제안 → 결정 → 시험·수정</strong><br>
+    5단계를 순서대로: <strong>① 문제 정의 ② 욕구 명확화 ③ 해결책 제안·논의 ④ 해결책 결정 ⑤ 시험 기간 설정 및 수정</strong>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- S9: 공감적 의사소통 -->
+<section id="s9">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(167,139,250,.15);">🗣️</div>
+    <div class="section-title">공감적 의사소통 훈련 <span class="badge badge-red">화자·청자 규칙 전부 단답형</span></div>
+  </div>
+
+  <div class="kp kp-vi">
+    <span class="kp-icon">📌</span>
+    <div class="kp-body">
+      <strong>출처:</strong> Epstein &amp; Baucom (2002); Epstein &amp; Falconier (2024)<br>
+      <strong>화자(말하는 사람)의 규칙</strong>과 <strong>청자(듣는 사람)의 기술</strong>로 나뉨. 둘 다 출제 가능.
+    </div>
+  </div>
+
+  <div class="grid2">
+    <!-- 화자 -->
+    <div class="role-box c-vi" style="padding:18px 20px;">
+      <h3 style="color:var(--violet);">🗣️ 화자(Speaker)의 규칙 <span class="badge badge-vi">7가지</span></h3>
+      <ul>
+        <li><strong>주관성 강조</strong>: <span class="hl">"내가 느끼기에는…"</span></li>
+        <li><strong>나 전달법</strong>: 상대를 비난하지 말고 <strong>나 자신의 감정과 생각만</strong> 말하기</li>
+        <li><strong>구체적으로</strong>: 감정과 생각을 <strong>구체적</strong>으로 말하기</li>
+        <li><strong>부드러운 감정</strong>: <span class="hl">"속상해, 섭섭했어"</span></li>
+        <li><strong>짧게</strong>: 되도록 <strong>짧게</strong> 말하기</li>
+        <li><strong>긍정적·구체적 요구</strong>: 요구할 것은 <strong>긍정적으로 구체적으로</strong> 기술 (<span class="hl">"~해줄래?"</span>)</li>
+        <li><strong>긍정 먼저</strong>: 부정적 감정 표현 전에 먼저 <strong>긍정적 감정을 함께 표현</strong> (<span class="hl">"~한 거 알아, 고맙게 생각해, 그런데…"</span>)</li>
+      </ul>
+    </div>
+
+    <!-- 청자 -->
+    <div class="role-box c-sk" style="padding:18px 20px;">
+      <h3 style="color:var(--sky);">👂 청자(Listener)의 기술 — 공감적 경청 <span class="badge badge-am">5가지</span></h3>
+      <ul>
+        <li><strong>경청 표현</strong>: 경청하고 있음을 <strong>언어적·비언어적</strong>으로 표현하기</li>
+        <li><strong>관점 취하기</strong>: <strong>상대의 관점에서</strong> 상황을 바라보려 노력하기</li>
+        <li><strong>요약·피드백</strong>: 이해한 바를 요약해 말해주고 제대로 이해했는지 피드백 받기<br><span class="hl">"~해서 ~하게 느꼈다는 걸로 들려. 내가 이해한 게 맞아?"</span></li>
+        <li><strong>판단 보류</strong>: 상대 반응에 대한 <strong>자신의 판단(합리/비합리)을 잠시 옆으로 미루고</strong>, 상대가 왜 그런 감정을 느꼈는지 이해하려는 메시지 주기</li>
+        <li><strong>말 끊지 않기</strong>: 상대의 말을 끊지 않고 <strong>발언권이 주어질 때를 기다리기</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn" style="margin-top:14px;">
+    <strong>⚠️ 단답형 대비 핵심:</strong><br>
+    • 화자 규칙 중 <strong>"나 전달법"</strong>, <strong>"긍정 먼저"</strong>, <strong>"짧게"</strong>는 자주 출제됨<br>
+    • 청자 기술 중 <strong>"요약·피드백"</strong>의 예시 문장 <span class="hl">"~해서 ~하게 느꼈다는 걸로 들려. 내가 이해한 게 맞아?"</span>는 그대로 출제 가능<br>
+    • <strong>"판단 보류"</strong>: 합리/비합리 판단을 <u>잠시 옆으로 미루는 것</u>이 핵심
+  </div>
+
+  <details>
+    <summary style="color:var(--violet)">📖 화자 vs 청자 헷갈리는 개념 정리</summary>
+    <div class="db">
+      <strong>화자의 핵심:</strong> 자기중심적으로(나의 감정·생각) + 부드럽게 + 짧게 + 구체적으로 + 긍정 먼저<br><br>
+      <strong>청자의 핵심:</strong> 경청 표현 + 상대 관점 + 요약·피드백 + 판단 보류 + 끊지 않기<br><br>
+      <strong>중요:</strong> 청자는 상대의 반응에 대해 "합리적이냐 비합리적이냐"를 판단하지 않음. 왜 그런 감정을 느꼈는지 이해하는 것이 우선.
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- S10: 퀴즈 -->
+<section id="s10">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(251,191,36,.15);">📝</div>
+    <div class="section-title">실전 연습 퀴즈 <span>정답 클릭으로 확인</span></div>
+  </div>
+
+  <div class="warn">각 문제를 먼저 혼자 풀어본 후 <strong>답 보기</strong> 버튼을 누르세요.</div>
+
+  <div class="quiz-item" id="q1">
+    <div class="quiz-q">Q1. 행동치료(BT)와 인지행동가족치료(CBFT)의 가장 핵심적인 차이는?</div>
+    <button class="btn-reveal" onclick="toggle('q1')">답 보기</button>
+    <div class="quiz-a">
+      행동치료: <strong>관찰 가능한 행동과 강화 조건</strong>에 초점. "어떻게 행동이 강화되고 있는가?"<br><br>
+      인지행동가족치료: 행동 + <strong>그 행동을 지지하는 신념·규칙, 인지적 왜곡, 가족 스키마</strong>를 함께 다룸.<br>
+      핵심 추가 전제: <strong>감정과 행동은 인지(신념, 귀인, 기대)에 의해 매개됨</strong>.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q2">
+    <div class="quiz-q">Q2. 자동적 사고 기록지의 6개 열을 순서대로 모두 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q2')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>상황</strong> — 불쾌한 감정으로 이끈 사건·생각·회상<br>
+      ② <strong>자동적 사고</strong> — 감정 전에 나타난 생각 (확신 수준 0~100%)<br>
+      ③ <strong>감정</strong> — 구체적 감정 + 정도(%)<br>
+      ④ <strong>왜곡</strong> — 인지왜곡 유형 (이분법적 사고, 과잉 일반화 등)<br>
+      ⑤ <strong>대안적 사고/반응</strong> — 합리적 대안 + 확신 수준(%)<br>
+      ⑥ <strong>결과</strong> — 자동적 사고 확신 재평가(%) + 감정 재평가(%)
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q3">
+    <div class="quiz-q">Q3. 하향 화살표 기법의 정의와 핵심 질문을 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q3')">답 보기</button>
+    <div class="quiz-a">
+      <strong>정의:</strong> 자동적 사고의 이면에 있는 <strong>중간신념과 핵심신념(schema)</strong>을 탐색하는 기법.<br><br>
+      <strong>핵심 질문:</strong> <span style="color:var(--amber);">"만약 그게 사실이라면, 그게 무엇을 의미하나?"</span><br><br>
+      → 이 질문을 반복하여 자동적 사고 → 중간신념 → 핵심신념(schema) 수준까지 내려감.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q4">
+    <div class="quiz-q">Q4. 소크라테스식 질문의 정의와 CBT에서의 역할을 설명하시오.</div>
+    <button class="btn-reveal" onclick="toggle('q4')">답 보기</button>
+    <div class="quiz-a">
+      <strong>정의:</strong> 질문을 통해 내담자가 자신의 사고를 <strong>스스로 검토</strong>하고 새로운 관점을 발견하여, 보다 현실적이고 적응적인 해석을 찾도록 돕는 기법.<br><br>
+      <strong>핵심:</strong> 내담자가 자동적 사고를 사실로 받아들이지 않고 <strong>검토 가능한 가설로 바라보게</strong> 함.<br><br>
+      <strong>CBT에서의 역할:</strong> 인지 재구조화, 문제 해결, 정서 조절, 핵심신념 탐색의 <strong>기초가 되는 기법</strong>.
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q5">
+    <div class="quiz-q">Q5. 소크라테스식 질문의 5가지 유형을 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q5')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>증거 확인:</strong> "그 생각이 사실이라는 증거는 무엇인가요?"<br>
+      ② <strong>반대 증거:</strong> "그 생각과 반대되는 증거는 무엇인가요?"<br>
+      ③ <strong>대안적 해석:</strong> "이 상황을 다르게 해석할 가능성은 없을까요?"<br>
+      ④ <strong>이득·손해:</strong> "그 신념을 가지고 살아갈 때 삶이나 가족관계에 어떤 이익/손해가 있나요?"<br>
+      ⑤ <strong>신념 수정 방향:</strong> "신념을 어떻게 수정하면 가족관계와 생활에 더 도움이 될까요?"
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q6">
+    <div class="quiz-q">Q6. 문제해결 대화 5단계를 순서대로 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q6')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>문제 정의하기</strong><br>
+      ② <strong>이슈의 중요성과 자신의 욕구 명확하게 하기</strong><br>
+      ③ <strong>가능한 해결책들 제안하고 논의하기</strong><br>
+      ④ <strong>해결책 결정</strong><br>
+      ⑤ <strong>시험 기간 설정 및 수정</strong>
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q7">
+    <div class="quiz-q">Q7. 공감적 의사소통 훈련에서 화자의 규칙 7가지를 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q7')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>주관성 강조</strong>: "내가 느끼기에는…"<br>
+      ② <strong>나 전달법</strong>: 상대 비난 ✗, 나 자신의 감정·생각만 말하기<br>
+      ③ <strong>구체적으로</strong>: 감정과 생각을 구체적으로 말하기<br>
+      ④ <strong>부드러운 감정</strong>: "속상해, 섭섭했어"<br>
+      ⑤ <strong>짧게</strong>: 되도록 짧게 말하기<br>
+      ⑥ <strong>긍정적·구체적 요구</strong>: "~해줄래?" 형식<br>
+      ⑦ <strong>긍정 먼저</strong>: 부정 표현 전에 긍정적 감정·생각 함께 표현 ("~한 거 알아, 그런데…")
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q8">
+    <div class="quiz-q">Q8. 공감적 의사소통 훈련에서 청자의 기술 5가지를 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q8')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>경청 표현</strong>: 경청하고 있음을 언어적·비언어적으로 표현<br>
+      ② <strong>관점 취하기</strong>: 상대의 관점에서 상황을 바라보려 노력<br>
+      ③ <strong>요약·피드백</strong>: 이해한 바를 요약하고 피드백 받기 ("~해서 ~하게 느꼈다는 걸로 들려. 내가 이해한 게 맞아?")<br>
+      ④ <strong>판단 보류</strong>: 합리/비합리 판단을 잠시 옆으로 미루고, 상대가 왜 그런 감정을 느꼈는지 이해하려 함<br>
+      ⑤ <strong>말 끊지 않기</strong>: 발언권이 주어질 때를 기다리기
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q9">
+    <div class="quiz-q">Q9. 도식(schema)을 약화·수정하는 4단계 작업을 쓰시오.</div>
+    <button class="btn-reveal" onclick="toggle('q9')">답 보기</button>
+    <div class="quiz-a">
+      ① 도식을 <strong>"가설"로 올려놓고</strong> 증거를 함께 점검<br>
+      ② 도식에 기반한 <strong>이득과 손실 검토</strong><br>
+      ③ 새로운, 더 적응적인 신념을 함께 구성 (<strong>인지 재구조화</strong>)<br>
+      ④ 새 도식을 <strong>행동·경험으로 연습(체험화)</strong>하는 과제 설계
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q10">
+    <div class="quiz-q">Q10. CBFT 평가(Assessment)에서 행동치료의 평가에 추가되는 인지적 요소 3가지는?</div>
+    <button class="btn-reveal" onclick="toggle('q10')">답 보기</button>
+    <div class="quiz-a">
+      ① <strong>자동적 사고, 핵심신념, schema</strong> (각 가족 구성원의)<br>
+      ② <strong>가족 도식</strong>: 가족에 대한 개인적 이론 ("가족이란 ~해야 한다")<br>
+      ③ <strong>인지적 왜곡의 유형</strong>: 임의적 추론, 선택적 추상화, mind reading 등
+    </div>
+  </div>
+
+  <div class="quiz-item" id="q11">
+    <div class="quiz-q">Q11. 다음 중 공감적 의사소통 훈련에서 <strong>청자의 기술</strong>로 옳지 않은 것은?<br>
+      ① 이야기를 들으면서 상대의 관점에서 상황을 바라보려 노력한다.<br>
+      ② 상대의 반응이 비합리적이라고 판단되면 즉시 이를 알려준다.<br>
+      ③ 이해한 바를 요약해 말해주고 피드백을 받는다.<br>
+      ④ 상대의 말을 끊지 않고 발언권이 주어질 때를 기다린다.
+    </div>
+    <button class="btn-reveal" onclick="toggle('q11')">답 보기</button>
+    <div class="quiz-a">✅ 정답: <strong>②</strong><br>
+      청자는 상대의 반응에 대한 <strong>판단(합리/비합리)을 잠시 옆으로 미루어야</strong> 함.<br>
+      즉시 비합리적이라고 알리는 것은 공감적 경청의 원칙에 어긋남.
+    </div>
+  </div>
+
+</section>
+
+<!-- FINAL SUMMARY -->
+<section style="padding:40px 0;">
+  <div class="summary-box">
+    <h3>🎓 9장 2부 — 기말고사 최종 암기 포인트</h3>
+    <ol>
+      <li>CBFT = 행동치료 + <strong>인지이론(신념·schema·자동적 사고)</strong>. 인지가 감정·행동을 <strong>매개</strong>한다.</li>
+      <li>CBFT 평가 추가 요소: <strong>자동적 사고·핵심신념·schema / 가족 도식 / 인지왜곡 유형</strong></li>
+      <li>자동적 사고 기록지 6열: <strong>상황 → 자동적사고(%) → 감정(%) → 왜곡 → 대안적사고(%) → 결과(%)</strong></li>
+      <li>하향화살표 기법: 자동적 사고 → 중간신념 → <strong>핵심신념(schema)</strong>으로 내려감. 핵심 질문: <strong>"만약 그게 사실이라면, 그게 무엇을 의미하나?"</strong></li>
+      <li>도식 수정 4단계: <strong>가설로 올려놓기 → 이득·손실 검토 → 인지 재구조화 → 행동으로 체험화</strong></li>
+      <li>소크라테스식 질문: 자동적 사고를 <strong>검토 가능한 가설</strong>로 바라보게 함. CBT의 기초 기법.</li>
+      <li>소크라테스식 질문 5가지: 증거확인 / 반대증거 / 대안해석 / 이득손해 / 신념수정방향</li>
+      <li>문제해결 5단계: <strong>① 정의 ② 욕구 명확화 ③ 해결책 제안·논의 ④ 결정 ⑤ 시험 기간·수정</strong></li>
+      <li>화자 규칙 핵심: <strong>나 전달법 / 구체적으로 / 부드럽게 / 짧게 / 긍정 먼저</strong></li>
+      <li>청자 기술 핵심: <strong>경청 표현 / 관점 취하기 / 요약·피드백 / 판단 보류 / 말 끊지 않기</strong></li>
+    </ol>
+  </div>
+</section>
+
+</div>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  const btn = el.querySelector('.btn-reveal');
+  btn.textContent = el.classList.contains('open') ? '답 숨기기' : '답 보기';
+}
+</script>
+</body>
+</html>
