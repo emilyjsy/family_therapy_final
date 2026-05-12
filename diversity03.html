@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>청년의 사랑 2: 결혼과 비혼 — 개념 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --surface2: #f0ebe2;
+    --primary: #3d2b1f;
+    --accent: #8b4a2f;
+    --accent2: #c07a50;
+    --accent3: #5c7a5c;
+    --muted: #8a7a6e;
+    --border: #ddd5c8;
+    --tag-bg: #efe8de;
+    --highlight: #fdf3e3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--primary);
+    line-height: 1.8;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--primary);
+    color: #f7f4ef;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      rgba(255,255,255,0.025) 18px,
+      rgba(255,255,255,0.025) 19px
+    );
+  }
+  header .course-tag {
+    display: inline-block;
+    background: var(--accent2);
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .3rem .9rem;
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+  }
+  header h1 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: .6rem;
+  }
+  header p {
+    font-size: .9rem;
+    color: rgba(247,244,239,.6);
+    letter-spacing: .04em;
+  }
+
+  /* ── NAV / TOC ── */
+  .toc {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .8rem;
+    align-items: center;
+  }
+  .toc-label {
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-right: .4rem;
+  }
+  .toc a {
+    font-size: .78rem;
+    color: var(--accent);
+    text-decoration: none;
+    padding: .25rem .65rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--tag-bg);
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .toc a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 2.8rem;
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(61,43,31,.06);
+    animation: fadeUp .4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(16px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .section-header {
+    padding: 1.4rem 1.8rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .section-num {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent2);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.2rem;
+  }
+  .section-title-wrap h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.28rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.3;
+    margin-bottom: .25rem;
+  }
+  .section-title-wrap .subtitle {
+    font-size: .78rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .section-body {
+    padding: 1.6rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  /* ── CONCEPT BLOCK ── */
+  .concept {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 8px 8px 0;
+    padding: 1.1rem 1.3rem;
+  }
+  .concept h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .concept h3 .en {
+    font-size: .82rem;
+    font-weight: 400;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .concept p, .concept li {
+    font-size: .9rem;
+    color: #4a3a2e;
+    line-height: 1.85;
+  }
+  .concept ul {
+    padding-left: 1.2rem;
+    margin-top: .4rem;
+  }
+  .concept li { margin-bottom: .25rem; }
+
+  /* ── THEORY BLOCK ── */
+  .theory {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .theory-head {
+    background: var(--surface2);
+    padding: .75rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .theory-head h3 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .theory-head .ref {
+    font-size: .72rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .theory-body {
+    padding: 1rem 1.2rem;
+    font-size: .9rem;
+    color: #4a3a2e;
+    line-height: 1.85;
+  }
+  .theory-body ul {
+    padding-left: 1.2rem;
+    margin-top: .4rem;
+  }
+  .theory-body li { margin-bottom: .3rem; }
+
+  /* ── STAT BLOCK ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+  }
+  .stat-card .num {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: .3rem;
+  }
+  .stat-card .label {
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── EXAMPLE BOX ── */
+  .example {
+    background: #f0f5f0;
+    border: 1px solid #c5d8c5;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+  .example-label {
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--accent3);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  .example p, .example li {
+    font-size: .88rem;
+    color: #3a4e3a;
+    line-height: 1.85;
+  }
+  .example ul { padding-left: 1.1rem; }
+  .example li { margin-bottom: .2rem; }
+
+  /* ── KEYWORD TAGS ── */
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: .4rem;
+  }
+  .kw {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: .18rem .65rem;
+    font-size: .75rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ── DIVIDER / LABEL ── */
+  .block-label {
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+  }
+
+  /* ── GENDER GAP BOX ── */
+  .gender-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+  }
+  .gender-card {
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    font-size: .88rem;
+    line-height: 1.75;
+  }
+  .gender-card.m {
+    background: #e8f0f8;
+    border: 1px solid #b8cfe0;
+    color: #2a3e52;
+  }
+  .gender-card.f {
+    background: #f8edf0;
+    border: 1px solid #e0b8c4;
+    color: #52242e;
+  }
+  .gender-card strong {
+    display: block;
+    margin-bottom: .3rem;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .06em;
+  }
+
+  /* ── QUOTE ── */
+  .quote {
+    border-left: 3px solid var(--accent2);
+    padding: .7rem 1.1rem;
+    background: var(--tag-bg);
+    border-radius: 0 6px 6px 0;
+    font-size: .88rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .quote cite {
+    display: block;
+    margin-top: .4rem;
+    font-size: .76rem;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--accent2);
+  }
+
+  /* ── TERM COMPARISON ── */
+  .term-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+  }
+  .term-box {
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    font-size: .88rem;
+    line-height: 1.75;
+  }
+  .term-box.neg {
+    background: #fdf0e8;
+    border: 1px solid #e8c8a8;
+    color: #5a3820;
+  }
+  .term-box.pos {
+    background: #edf8ee;
+    border: 1px solid #a8d8aa;
+    color: #1e4a22;
+  }
+  .term-box h4 {
+    font-size: .82rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .section-body { padding: 1.2rem 1.1rem; }
+    .section-header { padding: 1.1rem 1.1rem 1rem; }
+    .gender-grid, .term-row { grid-template-columns: 1fr; }
+    .toc { padding: .9rem 1rem; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: .76rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="course-tag">청년과 가족다양성 · 11-1주차</div>
+  <h1>청년의 사랑 2<br>결혼과 비혼</h1>
+  <p>2026.5.12. (화) · 이재림 교수 · 서울대학교 아동가족학과</p>
+</header>
+
+<nav class="toc">
+  <span class="toc-label">목차</span>
+  <a href="#s1">혼인 통계</a>
+  <a href="#s2">결혼이 필수였던 시대</a>
+  <a href="#s3">결혼이 선택인 시대</a>
+  <a href="#s4">계획된 행동 이론</a>
+  <a href="#s5">규범·가치관 변화</a>
+  <a href="#s6">현실적 장벽·위험 회피</a>
+  <a href="#s7">성차별성</a>
+  <a href="#s8">결혼 패러다임</a>
+  <a href="#s9">비혼·관련 용어</a>
+  <a href="#s10">언론 보도 분석</a>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+  1. 혼인 통계
+══════════════════════════════════════════ -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title-wrap">
+      <h2>2025 혼인 통계</h2>
+      <span class="subtitle">2026.3.19. 보도 · 국가데이터처</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div>
+      <div class="block-label">주요 수치</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="num">24만</div>
+          <div class="label">2025년 혼인건수<br>(전년대비 +8.1%, +1만 8천 건)</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">4.7건</div>
+          <div class="label">조혼인율<br>(인구 1천 명당, 전년대비 +0.4건)</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">33.9세</div>
+          <div class="label">남성 평균초혼연령<br>(10년 전 대비 +1.3세)</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">31.6세</div>
+          <div class="label">여성 평균초혼연령<br>(10년 전 대비 +1.7세)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <h3>연령별 혼인율 <span class="en">peak: 30대 초반</span></h3>
+      <p>2025년 기준 남녀 모두 <strong>30~34세</strong>에서 가장 높은 혼인율을 보임 (남 53.6건, 여 57.6건). 2015년과 비교하면 혼인율 피크 연령대 자체는 유지되지만 수치는 전반적으로 하락.</p>
+    </div>
+
+    <div class="concept">
+      <h3>외국인과의 혼인</h3>
+      <p>2025년 약 <strong>2만 1천 건</strong>으로 전년대비 소폭 감소(-0.3%). 코로나 시기(2020~2021)에 급감했다가 2023년을 전후로 다시 회복 추세를 보이다가 2025년 소폭 감소.</p>
+    </div>
+
+    <div class="concept">
+      <h3>미혼자 비율 추이 (2000-2020) <span class="en">출처: 인구총조사 1% 표본</span></h3>
+      <ul>
+        <li>모든 연령대에서 지속적으로 증가하는 추이</li>
+        <li><strong>20대 비혼 비율 증가</strong> → 혼인 시기의 지연(만혼화)을 반영할 수 있음</li>
+        <li><strong>40대 비혼 비율 증가</strong> → 생애 비혼(평생 결혼하지 않는 사람)의 증가를 보여줄 수 있음</li>
+        <li>40~49세 남성 비혼 비율: 2000년 대비 <strong>약 7배</strong> 증가</li>
+        <li>40~49세 여성 비혼 비율: 같은 기간 <strong>5배 이상</strong> 증가</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">성별 × 교육수준 · 고용 교차 패턴</div>
+      <ul>
+        <li><strong>교육수준</strong>: 미혼 여성이 미혼 남성보다 대졸자 비율이 더 높음. 유배우자와 비교하면, 미혼 남성은 저학력자에서, 미혼 여성은 <em>고학력자</em>에서 더 많이 나타남.</li>
+        <li><strong>고용률</strong>: 남성은 기혼자(유배우자)의 고용률이 미혼자보다 높음. 여성은 반대로 미혼자의 고용률이 기혼자보다 높음 → 여성에게 결혼이 고용/커리어에 불리하게 작용할 수 있음을 시사.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  2. 결혼이 필수였던 시대
+══════════════════════════════════════════ -->
+<section class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title-wrap">
+      <h2>결혼이 필수였던 시대</h2>
+      <span class="subtitle">보편적 결혼관 · 정상가족 이데올로기 · 연령규범 · 순서규범</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>보편적 결혼관</h3>
+      <p>결혼을 <strong>일생에 한 번쯤 경험하게 되는 자연스러운 생애사건</strong>으로 여기는 관념. 결혼을 예외적 사건이 아니라 모든 성인이 거치는 당연한 통과의례로 전제함.</p>
+      <ul>
+        <li>성관계·부모됨·동거에 선행하는 <em>필수적인 생애 단계</em>로 인식</li>
+        <li>'결혼적령기', '처녀귀신' 등의 표현이 보편적 결혼관을 반영</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>정상가족 이데올로기 <span class="en">Normal Family Ideology</span></h3>
+      <p>결혼제도를 통해 여성과 남성이 가족을 형성하고, <strong>결혼제도 안에서 생물학적 자녀를 출산하는 것이 정상적</strong>이라는 이념.</p>
+      <ul>
+        <li>정상가족은 반드시 결혼을 통해 형성된다고 전제 → 결혼을 필수로 간주</li>
+        <li>출산은 결혼이라는 제도 안에서 이루어져야 한다고 봄 (이를 어기면 '속도위반'으로 낙인)</li>
+        <li>동거·비혼·한부모·동성커플 등 다양한 가족 형태를 '비정상'으로 배제하는 효과를 낳음</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>부계혈연주의와 결혼</h3>
+      <p>17세기 중엽 이후 성리학의 영향력 강화 → <strong>적장자(嫡長子)의 출산을 통해 부계혈통을 잇는 것</strong>을 강조. 적장자의 출산은 결혼제도 안에서의 출산을 의미했기 때문에 결혼은 개인에게도 '필수'로 여겨짐.</p>
+    </div>
+
+    <div class="concept">
+      <h3>결혼 = 성인됨</h3>
+      <p>결혼해야 비로소 '어른'이 된다는 사회적 믿음. 여성의 성년식인 <strong>계례(笄禮)</strong>를 혼례 중에 거행하기도 했음 → 결혼과 성인됨이 제도적으로 연결된 사례.</p>
+    </div>
+
+    <div class="concept">
+      <h3>연령규범 <span class="en">Age Norm</span></h3>
+      <p>결혼하기에 <strong>적절한 연령대가 있다</strong>는 사회적 규범. '노처녀', '노총각' 등의 표현이 이 규범에서 벗어난 사람을 낙인찍는 방식으로 기능함. 결혼적령기가 언제인가는 사회·시대에 따라 다름.</p>
+    </div>
+
+    <div class="concept">
+      <h3>순서규범 <span class="en">Sequence Norm</span></h3>
+      <p>성인 초기 생애사건을 경험하는 순서에 대한 규범. 일반적으로 <strong>졸업 → 취업 → 결혼 → 부모됨</strong>의 순서가 '올바른' 생애경로로 여겨짐.</p>
+      <ul>
+        <li>직장을 결혼의 조건으로 간주하는 인식</li>
+        <li>결혼 전 임신을 하더라도 출산은 결혼 이후에 하려는 기대 발생 ('속도위반' 낙인을 피하기 위해)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  3. 결혼이 선택인 시대
+══════════════════════════════════════════ -->
+<section class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title-wrap">
+      <h2>결혼이 선택인 시대</h2>
+      <span class="subtitle">비혼 증가의 세 가지 원인 구조</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>보편적 결혼관·정상가족 이데올로기의 약화</h3>
+      <ul>
+        <li>'결혼을 반드시 해야 한다', '결혼을 하는 것이 좋다'에 동의하는 비율 지속 감소</li>
+        <li>결혼의향 전반적 감소</li>
+        <li>젠더 격차: 여성의 결혼의향 감소가 남성보다 두드러지는 경향</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="block-label">비혼화의 세 가지 원인</div>
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.2rem;">
+        <div class="theory">
+          <div class="theory-head">
+            <h3>① 규범 및 가치관 변화</h3>
+          </div>
+          <div class="theory-body">
+            개인주의, 자아실현 지향 가치관의 확산 → 결혼의 규범적 구속력 약화. 이론적으로는 제2차 인구변천 이론, 결혼의 탈제도화, 개인화, 탈전통화로 설명됨 (상세 내용은 §5 참조).
+          </div>
+        </div>
+        <div class="theory">
+          <div class="theory-head">
+            <h3>② 현실적 장벽 및 위험 회피</h3>
+          </div>
+          <div class="theory-body">
+            취업 문턱·불안정 고용·높은 주택가격 등 구조적 제약, 가족에게 부과되는 과도한 역할·책임 부담 (상세 내용은 §6 참조).
+          </div>
+        </div>
+        <div class="theory">
+          <div class="theory-head">
+            <h3>③ 가족과 친족의 성차별성</h3>
+          </div>
+          <div class="theory-body">
+            부계직계가족 원리, 며느리의 열등한 지위, 경력단절 등 결혼이 여성에게 불평등한 부담으로 작용 (상세 내용은 §7 참조).
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  4. 계획된 행동 이론
+══════════════════════════════════════════ -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <h2>계획된 행동 이론</h2>
+      <span class="subtitle">Planned Behavior Theory · Ajzen</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>핵심 명제</h3>
+      <p><strong>개인의 행동은 의향(intention)에 의해 결정되며, 의향은 실제 행동을 예측한다.</strong> 따라서 '왜 결혼하는가/하지 않는가'를 설명하려면 먼저 결혼의향에 영향을 미치는 요인을 분석해야 함.</p>
+    </div>
+
+    <div>
+      <div class="block-label">의향에 영향을 미치는 세 요인</div>
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.2rem;">
+
+        <div class="theory">
+          <div class="theory-head">
+            <h3>① 태도 <span class="ref">Attitude</span></h3>
+          </div>
+          <div class="theory-body">
+            행동에 대한 개인의 <strong>긍정적·부정적 평가</strong>. 결혼에 대해 '좋은 것'으로 평가하는지, '부담스러운 것'으로 평가하는지에 따라 결혼의향이 달라짐.
+          </div>
+        </div>
+
+        <div class="theory">
+          <div class="theory-head">
+            <h3>② 주관적 규범 <span class="ref">Subjective Norm</span></h3>
+          </div>
+          <div class="theory-body">
+            주변 사람(가족·친구·사회)이 그 행동을 <strong>어떻게 생각하는지에 대한 기대 또는 사회적 압력</strong>. "내 주변은 결혼을 당연히 해야 한다고 생각한다"는 인식이 강할수록 결혼의향 높아짐.
+          </div>
+        </div>
+
+        <div class="theory">
+          <div class="theory-head">
+            <h3>③ 지각된 행동 통제 <span class="ref">Perceived Behavioral Control</span></h3>
+          </div>
+          <div class="theory-body">
+            특정 행동을 <strong>쉽게 또는 어렵게 수행할 수 있다는 인식</strong>, 또는 실제로 수행할 수 있는 능력. 주택·취업 등 결혼 조건을 충족할 수 있다고 느낄수록 결혼의향 높아짐.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">결혼에의 적용</div>
+      <p>비혼·만혼 증가를 이 이론으로 설명하면: (1) 결혼에 대한 <em>태도</em>가 부정적으로 변화하거나, (2) 결혼을 강요하는 <em>주관적 규범(사회적 압력)</em>이 약화되거나, (3) 취업 난·주거비 등으로 <em>지각된 행동 통제</em>가 낮아진 경우, 결혼의향이 하락하고 실제 결혼율도 감소함.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  5. 규범·가치관 변화 이론들
+══════════════════════════════════════════ -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div class="section-title-wrap">
+      <h2>1. 규범 및 가치관 변화</h2>
+      <span class="subtitle">제2차 인구변천 · 탈제도화 · 개인화 · 탈전통화 · 결혼 기대 상승</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>제2차 인구변천 이론 <span class="ref">Second Demographic Transition Theory · Lesthaeghe, 2010</span></h3>
+      </div>
+      <div class="theory-body">
+        <strong>개인주의·자율성·자아실현</strong>을 강조하는 관념적 변화가 인구학적 변화로 이어진다는 이론.
+        <ul>
+          <li>혼인율 감소, 초혼연령 상승</li>
+          <li>비혼동거 증가</li>
+          <li>이혼율 증가, 출산율 감소</li>
+        </ul>
+        가치관의 변화(탈물질주의적 전환)가 먼저 오고, 그것이 행동(혼인·출산)의 변화로 이어지는 구조.
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>결혼의 탈제도화 <span class="ref">Deinstitutionalization of Marriage · Cherlin, 2004</span></h3>
+      </div>
+      <div class="theory-body">
+        <strong>제도로서의 결혼 쇠퇴.</strong> 결혼이라는 제도를 선택하게 하는 사회적 규범이 약화되고, 전통적인 결혼제도 밖에서도 낭만적 친밀성을 추구하는 경향이 강화됨.
+        <ul>
+          <li>비혼, 동거, 이혼, 재혼, 동성 파트너십 등 다양한 실천 등장</li>
+          <li>결혼이 낭만적 관계의 <em>유일한</em> 틀이 아니라 여러 선택지 중 하나가 됨</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>개인화 <span class="ref">Individualization · Beck, 1986; Beck & Beck-Gernsheim, 2002</span></h3>
+      </div>
+      <div class="theory-body">
+        <strong>개인과 사회의 관계가 구조적으로 변화</strong>하는 것. 사회제도가 개인을 단위로 구성되면서 개인이 자기 삶에 스스로 책임을 지도록 강제됨.
+        <ul>
+          <li>개인의 선택 증가, 동시에 위험도 스스로 감수</li>
+          <li>결혼이 '운명'이나 '필수 과업'이 아니라 <strong>수많은 선택지 중 하나인 self-project</strong>가 됨</li>
+          <li>자아실현이나 커리어라는 '나만의 자서전'을 쓰는 데 결혼이 방해가 된다면 배제하는 것이 합리적 선택이 됨</li>
+          <li>표준화된 '결혼 템플릿' 소멸 → 개인의 선택·경험·욕구를 중심으로 고유한 친밀성 서사를 구성</li>
+        </ul>
+        <strong>한국의 맥락</strong>: 1990년대 IMF 금융위기와 신자유주의 경제체제를 경험하면서 개인화 경향 나타남(홍찬숙, 2012). 청년세대 개인화는 특히 가족 등 사생활 측면에서 빠르게 진행.
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>개인화된 사회에서의 청년세대 <span class="ref">결혼 연기 · 저출산 · 높은 이직률</span></h3>
+      </div>
+      <div class="theory-body">
+        <strong>결혼 연기</strong>의 배경: 여성의 교육수준·취업률 증가, 가족 내 성별분업 유지, 경제위기로 인한 맞벌이 증가, 가족에서 벗어나고자 하는 움직임 → <em>여성의 탈가족화, 결혼·가족보다 커리어 중시</em><br><br>
+        <strong>저출산</strong>의 배경: 양육 시간·노력 부담, 여성의 취업률 증가, 자녀에 대한 높은 기대, 출산통제 기술 발달 → <em>의무가 아닌 개인의 선택으로서의 출산, 그러나 출산할 수 없는 사회적 여건</em><br><br>
+        <strong>높은 이직률</strong>: 온전한 사회구성원으로 인정받지 못함, 스스로를 교체 가능한 노동력으로 인식, 평생직장보다 새로운 대안 추구 → <em>노동자로서의 집단 정체성 약화, 개인화된 피고용으로 탈바꿈</em>
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>탈전통화 <span class="ref">Detraditionalization · Giddens, 1992</span></h3>
+      </div>
+      <div class="theory-body">
+        재생산·경제 중심의 전통적 결혼 → <strong>순수한 관계(Pure Relationship)</strong>로 이동.
+        <ul>
+          <li>개인의 <em>정서적 만족</em>과 관계의 <em>평등</em>이 중요해짐</li>
+          <li>외부적 의무(사회·가족의 압력)가 아닌, <strong>내부적 만족</strong>이 사라지면 언제든 관계를 해소할 수 있는 유연한 관계</li>
+          <li>결혼이 경제적 필요나 재생산의 수단이 아니라 정서적 친밀성 자체를 위한 것으로 재정의됨</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>결혼을 통한 자아실현 기대 상승 <span class="ref">Finkel, 2017</span></h3>
+      </div>
+      <div class="theory-body">
+        결혼을 통해 <strong>달성하기 쉽지 않은 목표(자아실현)를 추구하려는 경향</strong> → 결혼에 대한 기대가 높아질수록 실제 결혼을 선택하기 어려워지는 역설.
+      </div>
+    </div>
+
+    <div class="quote">
+      "미국의 빈곤 여성들은 안정된 소득의 남성, 안정된 주택, 낭만적인 결혼식 등 결혼에 높은 기대를 갖고 있었으나, 자신들이 처한 현실이 그 기대에 한참 미치지 못하기 때문에 결혼 대신 모성(출산)을 먼저 선택하는 경향이 있었다."
+      <cite>Edin & Kefalas (2005), Promises I Can Keep: Why Poor Women Put Motherhood Before Marriage</cite>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>압축적 근대성 <span class="ref">Compressed Modernity · Chang, 1999, 2010</span></h3>
+      </div>
+      <div class="theory-body">
+        근대화·탈근대화가 짧은 시간에 압축적으로 진행되어 <strong>전통(유교 규범) · 근대(산업화 가족모델) · 탈근대(개인화)의 가치가 동시에 공존하는 사회</strong>가 됨.
+        <ul>
+          <li><strong>우발적 다원주의</strong>: 서로 상충하는 규범들이 뒤섞여 공존</li>
+          <li>비혼, 동거, 비혼출산, 동성결혼 수용도가 집단별로 크게 다름</li>
+          <li>비혼 출산: 매우 강한 거부 (OECD 최저 수준)</li>
+          <li>동거: 중국·일본 대비 낮은 수용도</li>
+          <li>동성결혼: 공적 논의 자체가 제한적 (대만 동성결혼 합법화와 대조)</li>
+        </ul>
+        <strong>가족적 자유주의(Chang, 2018)</strong>: 서구의 개인주의적 자율성과 달리, 한국의 자유주의는 경제·재생산 책임을 개인이 아닌 <em>가족에게 전가하는 방식</em>으로 작동.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  6. 현실적 장벽과 위험 회피
+══════════════════════════════════════════ -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div class="section-title-wrap">
+      <h2>2. 현실적 장벽과 위험 회피</h2>
+      <span class="subtitle">N포세대 · 가족피로 · 위험관리 전략으로서의 비혼</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>구조적 장벽으로서의 결혼</h3>
+      <p>높은 취업의 문턱, 불안정한 고용, 높은 주택가격 등 현실적 여건이 결혼을 연기하거나 선택하지 않게 하는 장벽으로 작용. 사회는 <strong>안정된 직장 + 번듯한 신혼집 + 화려한 결혼식</strong>이라는 '결혼 조건'에 대한 사회적 각본을 요구하지만, 이 조건을 갖추기 점점 어려워짐.</p>
+    </div>
+
+    <div class="example">
+      <div class="example-label">N포세대 담론</div>
+      <p>연애, 결혼, 출산을 포기하는 세대를 지칭하는 담론. '3포세대'에서 시작해 N포세대로 확장. 결혼을 선택하기 어려운 경제적 현실을 압축적으로 드러내는 개념.</p>
+      <p style="margin-top:.5rem;"><strong>결혼은 '사치재'</strong>: 일부 학자·언론에서 결혼이 경제적 여유가 있는 사람만 누릴 수 있는 사치재가 되었다는 논의 제기.</p>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>가족피로와 위험관리 전략 <span class="ref">장경섭, 2011, 2018</span></h3>
+      </div>
+      <div class="theory-body">
+        한국 사회는 가족에게 부담스러운 역할과 책임을 기대해 왔음.
+        <ul>
+          <li>가족주의적 한국 사회의 압축적 근대화 → 사회경제적 발전의 근간이 가족이었음</li>
+          <li>가족은 이질적 가족이념들의 영향으로 <strong>모순적인 역할과 책임</strong>을 동시에 수행해야 했음</li>
+          <li>만성적인 <strong>가족피로(family fatigue)</strong> 축적</li>
+          <li>결혼은 미래 노동력 생산, 돌봄 수행, 가족 단위 경제 유지 역할을 요구 → 개인에게 과도한 부담</li>
+          <li>이러한 부담을 회피하기 위한 <strong>'위험관리 전략(risk management strategy)'</strong>으로서 비혼·출산 기피가 나타남</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  7. 결혼과 친족의 성차별성
+══════════════════════════════════════════ -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div class="section-title-wrap">
+      <h2>3. 결혼과 친족의 성차별성</h2>
+      <span class="subtitle">그의 결혼 vs 그녀의 결혼 · 부계직계가족 원리</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>'그의 결혼, 그녀의 결혼' <span class="en">His marriage and her marriage · Bernard, 1972</span></h3>
+      <p>결혼제도와 결혼생활이 갖는 <strong>성차별적 특성</strong>. 남성이 결혼에서 얻는 이익이 여성이 얻는 이익보다 크다는 주장.</p>
+    </div>
+
+    <div class="gender-grid">
+      <div class="gender-card m">
+        <strong>남성의 결혼</strong>
+        돌봄·가사 서비스 수혜<br>
+        정서적 지지 획득<br>
+        사회적 지위 상승<br>
+        고용률 증가 (기혼 남성 > 미혼 남성)
+      </div>
+      <div class="gender-card f">
+        <strong>여성의 결혼</strong>
+        가사·육아 일차적 담당 기대 잔존<br>
+        '경단녀(경력단절여성)' 위험<br>
+        '독박육아' 위험<br>
+        고용률 감소 (기혼 여성 &lt; 미혼 여성)<br>
+        M자형 연령대별 고용률 곡선
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>부계직계가족 원리와 며느리의 열등한 지위</h3>
+      </div>
+      <div class="theory-body">
+        <ul>
+          <li>조선시대 17세기 중엽부터 막강한 영향력: <strong>적장자 출산을 통한 부계혈연의 영속적 계승</strong> 강조</li>
+          <li>부계조상에 대한 효(孝) 강조 → 직계부모뿐 아니라 부계조상에게도 제례·차례 등 수행</li>
+          <li>쇠약한 노부모 돌봄·명절·제사 준비는 '며느리의 역할'로 기대됨</li>
+          <li>남아선호·전통적 가족의례에 대한 기대는 상당히 약화되었으나, <strong>부계친족에서 며느리가 열등한 지위를 차지하는 상황은 지속</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">친족 호칭의 비대칭성</div>
+      <ul>
+        <li>남편의 남동생 → <strong>'도련님'</strong> (높임말) / 남편의 여동생 → <strong>'아가씨'</strong> (높임말)</li>
+        <li>아내의 여동생 → <strong>'처제'</strong> (낮춤 표현) / 아내의 남동생 → <strong>'처남'</strong></li>
+        <li>→ 결혼 후 여성이 남편 가족의 위계에서 하위 지위에 놓임을 언어 구조에서도 확인 가능</li>
+        <li><strong>'시월드'</strong>: 남편 가족과의 갈등·불평등을 표현하는 대중적 용어</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>결혼과 자녀 출산 압박</h3>
+      <p>결혼이 자녀 출산에 대한 압박으로 이어질 가능성 → 대를 이어야 한다는 부계혈연 규범, 여성의 지위가 열등한 친족관계 등이 결합되면서 결혼이 여성 청년에게 <strong>부담이자 위험</strong>으로 인식됨.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  8. 결혼 패러다임
+══════════════════════════════════════════ -->
+<section class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title-wrap">
+      <h2>결혼 패러다임</h2>
+      <span class="subtitle">Marital Paradigm · Willoughby et al., 2015 / 결혼이행 vs. 결혼관계</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>결혼 패러다임 개요</h3>
+      <p>결혼에 대한 신념·태도를 <strong>결혼이행(getting married)에 관한 신념</strong>과 <strong>결혼생활(being married)에 관한 신념</strong>으로 구분하고, 이것이 결혼의향 → 결혼행동으로 이어지는 경로를 제시하는 이론 틀.</p>
+    </div>
+
+    <div>
+      <div class="block-label">① 결혼이행(Getting Married)에 관한 신념</div>
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.3rem;">
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 타이밍 <span class="ref">Marital Timing</span></h3></div>
+          <div class="theory-body">연애부터 약혼·결혼 등의 시기와 관련된 태도와 신념. "몇 살쯤에 결혼해야 한다"는 기대가 포함됨.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 중요성 <span class="ref">Marital Salience</span></h3></div>
+          <div class="theory-body">결혼에 대한 일반적 중요성, 그리고 교육·취업 등 다른 삶의 목표와 비교하여 결혼이 갖는 <strong>상대적 중요성</strong>. "결혼보다 커리어가 더 중요하다"는 인식이 결혼의향을 낮출 수 있음.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 맥락 <span class="ref">Marital Context</span></h3></div>
+          <div class="theory-body">배우자 선택 및 결혼 준비도, 결혼으로의 이행 조건 등 개인적·관계적·문화적 상황을 고려한 신념. "직장과 집이 있어야 결혼할 수 있다"는 기대가 포함됨.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block-label" style="margin-top:.6rem;">② 결혼생활(Being Married)에 관한 신념</div>
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.3rem;">
+        <div class="theory">
+          <div class="theory-head"><h3>부부관계 <span class="ref">Marital Process</span></h3></div>
+          <div class="theory-body">결혼 전이·결혼 적응에 대한 신념, 일-가정 균형, 가사분담, 친밀감과 성 등에 대한 다양한 태도를 포함. "결혼 후 가사는 공평하게 나눠야 한다"는 기대 등.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 영속성 <span class="ref">Marital Permanence</span></h3></div>
+          <div class="theory-body">결혼이 해체될 수 있는 상황에서도 결혼을 <strong>유지하려는 정도</strong>. 이혼에 대한 태도 등을 포함.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 중심성 <span class="ref">Marital Centrality</span></h3></div>
+          <div class="theory-body">결혼 이후의 삶에서 결혼생활과 배우자 역할이 갖는 <strong>상대적 중요성</strong>. "결혼 후에도 개인의 자아실현이 더 중요하다"고 보는 태도는 낮은 결혼 중심성을 의미.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <h3>결혼이행 vs. 결혼관계 구분의 의의</h3>
+      <div class="term-row">
+        <div class="term-box neg">
+          <h4>결혼이행 (Getting Married)</h4>
+          결혼하지 않은 사람이 결혼을 할지 말지, 누구와 결혼할지, 언제 결혼할지를 결정하는 <em>결혼 이전 단계</em>
+        </div>
+        <div class="term-box pos">
+          <h4>결혼관계 (Being Married)</h4>
+          결혼제도 안에 들어온 사람이 배우자와 어떤 관계를 맺는지, 가사·돌봄을 어떻게 나눌지, 이혼을 할지 등 <em>결혼 내부/이후의 삶의 방식</em>
+        </div>
+      </div>
+      <p style="margin-top:.7rem;font-size:.88rem;color:#4a3a2e;">이 구분은 연구에서 중요: 결혼에 긍정적이라도 '어떤 결혼'을 할 수 있느냐(조건, 제도, 관계의 질)에 따라 결혼의향이 달라질 수 있기 때문.</p>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>전통적 결혼이행의 대안에 대한 서울시민의 태도 잠재유형 <span class="ref">Lee, Park & Son, 2025, JMF</span></h3>
+      </div>
+      <div class="theory-body">
+        서울시민의 비혼·동거·비혼출산·동성결혼 등 대안적 결혼이행에 대한 태도를 잠재유형 분석으로 구분:
+        <ul>
+          <li><strong>Profile 1. 동성결혼 반대 중도층 (38.0%)</strong>: 다른 대안에는 중립적이나 동성결혼에 반대</li>
+          <li><strong>Profile 2. 보수층 (27.3%)</strong>: 전반적으로 대안에 거부적</li>
+          <li><strong>Profile 3. 전체 대안에 중도층 (20.9%)</strong>: 모든 대안에 중립적 태도</li>
+          <li><strong>Profile 4. 진보층 (13.8%)</strong>: 대부분의 대안에 수용적</li>
+        </ul>
+        → 한국 사회는 단일한 태도가 아니라 집단별로 상이한 태도가 공존함을 보여줌 (압축적 근대성의 우발적 다원주의).
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  9. 비혼과 관련 용어
+══════════════════════════════════════════ -->
+<section class="section" id="s9">
+  <div class="section-header">
+    <div class="section-num">9</div>
+    <div class="section-title-wrap">
+      <h2>비혼(非婚)과 관련 용어</h2>
+      <span class="subtitle">비혼 · 미혼 · 싱글 · 에버싱글</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="term-row">
+      <div class="term-box neg">
+        <h4>미혼(未婚)</h4>
+        '아직 결혼하지 않음'. <strong>'아닐 미(未)'</strong>를 써서 결혼하지 않은 상태를 불완전하거나 지체된 상태로 가정. 기혼(旣婚)의 반대 개념. 결혼을 전제한 표현.
+      </div>
+      <div class="term-box pos">
+        <h4>비혼(非婚)</h4>
+        결혼이라는 제도에 '<strong>안</strong>' 들어가겠다는 주체적 의지 표명. 1990년대 여성주의자들이 '미혼'의 수동성·독신의 고립성 문제를 제기하며 사용 시작 (박수민, 2017).
+      </div>
+    </div>
+
+    <div class="concept">
+      <h3>비혼의 다양한 의미</h3>
+      <ul>
+        <li>결혼을 <strong>적극적으로 거부</strong>한다는 의미 (비혼주의, 비혼선언, 비혼식)</li>
+        <li>결혼한 적이 없다는 의미 → <em>미혼</em>이나 독신을 대체하는 용어로 사용</li>
+        <li>이혼·사별까지 포괄하여 <em>현재 결혼하지 않은 상태</em>를 통칭하는 용어로도 사용</li>
+        <li>매우 다양한 의미로 쓰여 한 가지로 정의하기 어려움</li>
+      </ul>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>싱글(Single)</h3>
+      </div>
+      <div class="theory-body">
+        파트너십 상태를 나타내는 용어로 다양한 의미로 사용됨:
+        <ul>
+          <li>결혼 상태가 아니라는 의미</li>
+          <li>현재 교제하는 연인이 없다는 의미</li>
+          <li>현재 성관계를 맺지 않고 있다는 의미</li>
+          <li>위 세 가지 조건 중 두 개 이상을 의미하기도 함 (Beckmeyer & Jamison, 2023)</li>
+        </ul>
+        자발적 싱글 vs. 비자발적 싱글, 일시적 싱글 vs. 장기적 싱글 등으로 분류되는 경향이 있으나, 실제로는 이분법적으로 나누기 어려운 매우 다양한 상태를 지칭.
+      </div>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head">
+        <h3>에버싱글 (Ever-Single)</h3>
+      </div>
+      <div class="theory-body">
+        'unmarried', 'never-married' 등의 표현이 <strong>결혼을 당연한 것으로 가정</strong>한다는 비판의식에서 제안된 중립적 용어. 기혼(married) vs. 미혼(unmarried)의 이분법과 달리, <strong>'줄곧 싱글이었다'</strong>는 의미를 가져 결혼 여부를 기준으로 삼지 않음.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  10. 언론 보도 분석 과제
+══════════════════════════════════════════ -->
+<section class="section" id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <div class="section-title-wrap">
+      <h2>언론 보도 분석: 결혼 관련 가정</h2>
+      <span class="subtitle">10-2주차 과제 · 동일 연구결과의 상이한 프레이밍</span>
+    </div>
+  </div>
+  <div class="section-body">
+
+    <div class="concept">
+      <h3>과제 개요</h3>
+      <p>동일한 연구결과(미혼 여성이 기혼 여성보다 암 발생 위험이 높다는 연구)를 보도한 기사들의 헤드라인·서브헤드를 비교 분석함으로써, 기사에 내포된 <strong>결혼에 대한 가정(assumption)</strong>을 비판적으로 검토하는 과제.</p>
+    </div>
+
+    <div>
+      <div class="block-label">기사 유형 A — 결혼을 규범으로 전제하는 프레이밍</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.3rem;">
+        <div class="theory">
+          <div class="theory-head"><h3>"결혼해서 속썩고 사는 게 낫다?"…미혼녀, 암 발생 위험 '유부녀의 85%' <span class="ref">파이낸셜뉴스</span></h3></div>
+          <div class="theory-body">결혼을 권장하는 뉘앙스. '속썩고 사는 게 낫다'는 표현은 결혼의 어려움을 인정하면서도 건강을 위해 결혼해야 함을 암시. 정상가족 이데올로기를 재생산.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 안 한 사람 암 더 잘 걸린다…"기혼자보다 70~80% 더 높은 발병" <span class="ref">뉴스1</span></h3></div>
+          <div class="theory-body">'결혼 안 한 사람'을 문제적 집단으로 프레이밍. 비혼 상태를 건강 위험 요인으로 제시.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>"결혼해라" 괜한 잔소리 아니었다…미혼, 암 위험 최대 85% 증가</h3></div>
+          <div class="theory-body">결혼을 강요하는 기성세대의 잔소리를 정당화. 연령규범·주관적 규범(Planned Behavior Theory)을 강화하는 효과.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block-label" style="margin-top:.6rem;">기사 유형 B — 상대적으로 중립적인 프레이밍</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.3rem;">
+        <div class="theory">
+          <div class="theory-head"><h3>결혼 한 번도 안 한 사람, 암 위험 크다 <span class="ref">헬스조선</span></h3></div>
+          <div class="theory-body">에버싱글(ever-single) 개념에 가까운 표현. '한 번도 안 한'이라고 명시하여 현재 상태보다 경험 여부에 초점을 맞춤. 결혼을 노골적으로 권장하지는 않음.</div>
+        </div>
+        <div class="theory">
+          <div class="theory-head"><h3>"결혼하면 암 덜 걸린다?"…미혼여성이 암 위험 83% 높아 <span class="ref">헤럴드경제</span></h3></div>
+          <div class="theory-body">물음표를 사용하여 결론을 단정짓지 않고 의문형으로 제시. 연구결과를 인과관계로 과장하지 않으려는 시도.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">비판적 분석 포인트</div>
+      <ul>
+        <li><strong>상관관계 ≠ 인과관계</strong>: 미혼 여성의 암 발생 위험이 높은 것이 '비혼 때문'인지, 아니면 비혼과 공변하는 다른 변수(사회경제적 지위, 의료접근성, 스트레스 등) 때문인지 구분해야 함</li>
+        <li><strong>정상가족 이데올로기 재생산</strong>: '결혼 = 건강·정상'이라는 등식을 당연시함</li>
+        <li><strong>미혼의 다양성 무시</strong>: 자발적 비혼, 이혼 후 비혼, 경제적 이유로 인한 비혼 등 비혼의 다양한 맥락을 단일화</li>
+        <li><strong>젠더 편향</strong>: 주로 여성(미혼녀)에게 초점을 맞춤 → 보편적 결혼관과 연령규범을 여성에게 선택적으로 적용</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>서울대학교 생활과학대학 아동가족학과 · 청년과 가족다양성 11-1주차 강의노트 기반 개념 정리</p>
+  <p style="margin-top:.4rem;">이재림 교수 · 2026.5.12. (화)</p>
+</footer>
+
+</body>
+</html>
