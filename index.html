@@ -14,6 +14,7 @@
     --teal: #2dd4bf;
     --teal-dim: rgba(45,212,191,0.1);
     --amber: #fbbf24;
+    --violet: #a78bfa;
     --text: #e2e8f0;
     --muted: #94a3b8;
     --serif: 'Noto Serif KR', serif;
@@ -46,7 +47,7 @@
   header h1 {
     font-family: var(--serif);
     font-size: clamp(24px, 5vw, 36px);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: #fff;
   }
   header h1 span { color: var(--teal); }
@@ -101,10 +102,10 @@
 
   .chapter-num {
     font-family: var(--serif);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--teal);
-    width: 45px;
+    width: 60px;
   }
 
   .chapter-info { flex-grow: 1; }
@@ -117,6 +118,7 @@
   .chapter-tags {
     display: flex;
     gap: 6px;
+    flex-wrap: wrap;
   }
   .mini-tag {
     font-size: 10px;
@@ -148,10 +150,10 @@
   <div class="stats-grid">
     <div class="stat-card">
       <span class="stat-value">12</span>
-      <span class="stat-label">전체 챕터</span>
+      <span class="stat-label">전체 범위</span>
     </div>
     <div class="stat-card">
-      <span class="stat-value" style="color:var(--amber)">2 / 12</span>
+      <span class="stat-value" style="color:var(--amber)">3 / 12</span>
       <span class="stat-label">학습 완료</span>
     </div>
   </div>
@@ -159,7 +161,7 @@
   <div class="chapter-section">
     
     <a href="therapy08.html" class="chapter-card">
-      <div class="chapter-num">08</div>
+      <div class="chapter-num">CH 08</div>
       <div class="chapter-info">
         <div class="chapter-title">정신역동적 가족치료</div>
         <div class="chapter-tags">
@@ -167,25 +169,38 @@
           <span class="mini-tag">투사적 동일시</span>
         </div>
       </div>
-      <div class="btn-enter">학습 완료</div>
+      <div class="btn-enter">완료</div>
     </a>
 
     <a href="therapy09.html" class="chapter-card">
-      <div class="chapter-num">09</div>
+      <div class="chapter-num">CH 09-1</div>
       <div class="chapter-info">
-        <div class="chapter-title">인지행동 가족치료</div>
+        <div class="chapter-title">인지행동 가족치료 1</div>
         <div class="chapter-tags">
+          <span class="mini-tag">행동주의</span>
           <span class="mini-tag">ABC 모형</span>
-          <span class="mini-tag">인지왜곡</span>
         </div>
       </div>
-      <div class="btn-enter">학습 완료</div>
+      <div class="btn-enter">완료</div>
     </a>
 
-    <a href="#" class="chapter-card" style="opacity: 0.5;">
-      <div class="chapter-num">10</div>
+    <a href="therapy09_2.html" class="chapter-card">
+      <div class="chapter-num">CH 09-2</div>
       <div class="chapter-info">
-        <div class="chapter-title">다음 챕터 준비 중...</div>
+        <div class="chapter-title">인지행동 가족치료 2</div>
+        <div class="chapter-tags">
+          <span class="mini-tag">핵심신념</span>
+          <span class="mini-tag">하향화살표</span>
+          <span class="mini-tag">가족도식</span>
+        </div>
+      </div>
+      <div class="btn-enter">완료</div>
+    </a>
+
+    <a href="#" class="chapter-card" style="opacity: 0.5; border-style: dashed;">
+      <div class="chapter-num">CH 10</div>
+      <div class="chapter-info">
+        <div class="chapter-title" style="color: var(--muted);">다음 챕터 업데이트 대기 중</div>
       </div>
     </a>
 
